@@ -12,13 +12,22 @@ require('packer').startup(function(use)
       ts_update()
     end,
   }
-  use "williamboman/mason.nvim"
+  use {
+    "williamboman/mason.nvim",
+    config = function()
+      require"mason".setup()
+      require"mason-lspconfig".setup()
+    end,
+  }
   use 'mfussenegger/nvim-dap'
   --use 'mfussenegger/nvim-lint'
   --use 'mhartington/formatter.nvim'
   use {
     'jose-elias-alvarez/null-ls.nvim',
     requires = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      require"null-ls".setup()
+    end
   }
   use 'williamboman/mason-lspconfig.nvim'
   use 'jiangmiao/auto-pairs'
@@ -28,7 +37,10 @@ require('packer').startup(function(use)
     requires = {
       'nvim-tree/nvim-web-devicons', -- optional, for file icons
     },
-    tag = 'nightly' -- optional, updated every week. (see issue #1193)
+    --tag = 'nightly', -- optional, updated every week. (see issue #1193)
+    config = function()
+      require"nvim-tree".setup({ log = { enable = true } })
+    end,
   }
   use 'mfussenegger/nvim-jdtls'
   use 'tpope/vim-commentary'
@@ -51,6 +63,22 @@ require('packer').startup(function(use)
         },
       },
     },
+    config = function()
+      local actions = require("telescope.actions")
+      local trouble = require("trouble.providers.telescope")
+
+      local telescope = require("telescope")
+  
+      telescope.setup {
+        defaults = {
+          mappings = {
+            i = { ["<c-t>"] = trouble.open_with_trouble },
+            n = { ["<c-t>"] = trouble.open_with_trouble },
+          },
+        },
+      }
+      require"telescope".load_extension"packer"
+    end,
   }
   use {
     "folke/trouble.nvim",
@@ -62,6 +90,20 @@ require('packer').startup(function(use)
         -- refer to the configuration section below
       }
     end
+  }
+  -- use {
+    -- "luukvbaal/statuscol.nvim",
+    -- config = function()
+      -- require("statuscol").setup({ setopt = true })
+      --vim.o.statuscolumn = "%@v:lua.ScFa@%C%T%@v:lua.ScLa@%s%T@v:lua.ScNa@%=%{v:lua.ScLn()}%T"
+    -- end,
+  -- }
+  use {
+    'CosmicNvim/cosmic-ui',
+    requires = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim' },
+    config = function()
+      require('cosmic-ui').setup()
+    end,
   }
 end)
 
@@ -131,28 +173,15 @@ cmp.setup {
   },
 }
 
--- mason.nvim setup
-require"mason".setup()
-require"mason-lspconfig".setup()
+-- cosmic-ui remapping
+function map(mode, lhs, rhs, opts)
+  local options = { noremap = true, silent = true }
+  if opts then
+    options = vim.tbl_extend('force', options, opts)
+  end
+  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+end
 
--- nvim-tree setup
-require"nvim-tree".setup()
-
--- null-ls setup
-require"null-ls".setup()
-
--- telescope + plugins setup
-local actions = require("telescope.actions")
-local trouble = require("trouble.providers.telescope")
-
-local telescope = require("telescope")
-
-telescope.setup {
-  defaults = {
-    mappings = {
-      i = { ["<c-t>"] = trouble.open_with_trouble },
-      n = { ["<c-t>"] = trouble.open_with_trouble },
-    },
-  },
-}
-require"telescope".load_extension"packer"
+map('n', 'gn', '<cmd>lua require("cosmic-ui").rename()<cr>')
+map('n', '<leader>ga', '<cmd>lua require("cosmic-ui").code_actions()<cr>')
+map('v', '<leader>ga', '<cmd>lua require("cosmic-ui").range_code_actions()<cr>')

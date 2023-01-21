@@ -66,14 +66,12 @@ require('lspconfig')['tsserver'].setup{
 }
 
 
--- set mapleader to ','
-vim.g.mapleader = ","
-
 -- show line numbers
-vim.cmd'set nu'
+--vim.o.nu = true
+vim.cmd'set rnu nu'
 
 -- open trouble
 require"trouble".open()
 
 -- open nvim-tree
-require"nvim-tree".open()
+--require"nvim-tree".open()
