@@ -1,4 +1,4 @@
-local lsp = require('lsp-zero').preset({
+local lsp = require "lsp-zero".preset({
   manage_nvim_cmp = {
     set_sources = 'recommended',
     set_extra_mappings = true,
@@ -14,7 +14,7 @@ lsp.ensure_installed {
 
 lsp.on_attach(function(client, bufnr)
   lsp.default_keymaps({ buffer = bufnr })
-  vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+  vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format)
 
   lsp.buffer_autoformat()
 end)
