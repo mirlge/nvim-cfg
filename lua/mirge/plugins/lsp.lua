@@ -5,6 +5,13 @@ local lsp = require('lsp-zero').preset({
   },
 })
 
+lsp.ensure_installed {
+  "pyright",
+  "rust_analyzer",
+  "tsserver",
+  "lua_ls",
+}
+
 lsp.on_attach(function(client, bufnr)
   lsp.default_keymaps({ buffer = bufnr })
   vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)

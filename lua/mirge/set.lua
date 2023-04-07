@@ -12,3 +12,13 @@ vim.o.tabstop = 2
 vim.o.shiftwidth = 0
 vim.o.softtabstop = -1
 vim.o.expandtab = true
+vim.o.smartindent = true
+
+vim.o.swapfile = false
+vim.o.backup = false
+vim.o.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.o.undofile = true
+
+vim.o.updatetime = 50
+
+--vim.o.colorcolumn = "-5"

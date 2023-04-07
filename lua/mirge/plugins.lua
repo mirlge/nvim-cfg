@@ -1,52 +1,93 @@
-return {
-  {
-    "nvim-treesitter/nvim-treesitter",
-    build = function()
-      require "nvim-treesitter.install".update { with_sync = true }
-    end,
-    config = function()
-      require "mirge.plugins.treesitter"
-    end,
-  },
-  'nvim-treesitter/playground',
-  'folke/lazy.nvim',
-  {
-    'rose-pine/neovim',
-    name = 'rose-pine',
-    config = function() require "mirge.plugins.rose-pine" end,
-  },
-  {
-    "nvim-tree/nvim-tree.lua",
-    version = "*",
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
+local function get_plugins()
+  return {
+    'folke/lazy.nvim',
+    {
+      "nvim-treesitter/nvim-treesitter",
+      build = function()
+        require "nvim-treesitter.install".update { with_sync = true }
+      end,
+      config = function()
+        require "mirge.plugins.treesitter"
+      end,
     },
-    config = function()
-      require "mirge.plugins.nvim-tree"
-    end,
-  },
-  {
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v2.x',
-    dependencies = {
-      -- LSP Support
-      { 'neovim/nvim-lspconfig' }, -- Required
-      {
-        -- Optional
-        'williamboman/mason.nvim',
-        build = function()
-          pcall(vim.cmd, 'MasonUpdate')
-        end,
-      },
-      { 'williamboman/mason-lspconfig.nvim' }, -- Optional
+    'nvim-treesitter/playground',
+    {
+      'rose-pine/neovim',
+      name = 'rose-pine',
+      config = function() require "mirge.plugins.rose-pine" end,
+    },
+    {
+      'VonHeikemen/lsp-zero.nvim',
+      branch = 'v2.x',
+      dependencies = {
+        -- LSP Support
+        { 'neovim/nvim-lspconfig' }, -- Required
+        {
+          -- Optional
+          'williamboman/mason.nvim',
+          build = function()
+            pcall(vim.cmd, 'MasonUpdate')
+          end,
+        },
+        { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
-      -- Autocompletion
-      { 'hrsh7th/nvim-cmp' },     -- Required
-      { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-      { 'L3MON4D3/LuaSnip' },     -- Required
+        -- Autocompletion
+        { 'hrsh7th/nvim-cmp' },     -- Required
+        { 'hrsh7th/cmp-nvim-lsp' }, -- Required
+        { 'L3MON4D3/LuaSnip' },     -- Required
+      },
+      config = function()
+        require "mirge.plugins.lsp"
+      end,
     },
-    config = function()
-      require "mirge.plugins.lsp-zero"
-    end,
-  },
-}
+    {
+      'nvim-telescope/telescope.nvim',
+      tag = '0.1.1',
+      -- or branch = '0.1.1'
+      dependencies = { 'nvim-lua/plenary.nvim' },
+      config = function()
+        require "mirge.plugins.telescope"
+      end,
+    },
+    {
+      'theprimeagen/harpoon',
+      config = function()
+        require "mirge.plugins.harpoon"
+      end,
+    },
+    {
+      'mbbill/undotree',
+      config = function()
+        require "mirge.plugins.undotree"
+      end
+    },
+    {
+      'tpope/vim-fugitive',
+      config = function()
+        require "mirge.plugins.fugitive"
+      end
+    },
+    {
+      "folke/trouble.nvim",
+      requires = "nvim-tree/nvim-web-devicons",
+      config = function()
+        require "mirge.plugins.trouble"
+      end,
+    }
+  }
+end
+
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+require("lazy").setup(get_plugins())
