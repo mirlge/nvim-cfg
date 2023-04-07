@@ -72,7 +72,28 @@ local plugins = {
     config = function()
       require "mirge.plugins.trouble"
     end,
-  }
+  },
+  'tpope/vim-rhubarb',
+  {
+    'lewis6991/gitsigns.nvim',
+    -- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
+    config = function()
+      require "mirge.plugins.gitsigns"
+    end,
+  },
+  {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true },
+    config = function()
+      require "mirge.plugins.lualine"
+    end,
+  },
+  {
+    'numToStr/Comment.nvim',
+    config = function()
+      require "mirge.plugins.Comment"   --('Comment').setup()
+    end,
+  },
 }
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"

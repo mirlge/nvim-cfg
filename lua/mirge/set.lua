@@ -23,3 +23,8 @@ vim.o.undofile = true
 vim.o.updatetime = 50
 
 --vim.o.colorcolumn = "-5"
+
+vim.o.mouse = "a"
+
+vim.o.ignorecase = true
+vim.o.smartcase = true
