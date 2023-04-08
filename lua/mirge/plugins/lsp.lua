@@ -5,6 +5,15 @@ local lsp = require "lsp-zero".preset({
   },
 })
 
+local cmp = require('cmp')
+
+cmp.setup({
+  preselect = 'item',
+  completion = {
+    completeopt = 'menu,menuone,noinsert'
+  },
+})
+
 lsp.ensure_installed {
   "pyright",
   "rust_analyzer",
