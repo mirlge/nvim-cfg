@@ -23,7 +23,7 @@ lsp.ensure_installed {
 
 lsp.on_attach(function(client, bufnr)
   lsp.default_keymaps({ buffer = bufnr })
-  vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format)
+  vim.keymap.set("n", "<Leader>lf", vim.lsp.buf.format)
 
   lsp.buffer_autoformat()
 end)

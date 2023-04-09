@@ -5,4 +5,4 @@ trouble.setup {
   -- refer to the configuration section below
 }
 
-vim.keymap.set("n", "<leader>lt", trouble.toggle) --vim.cmd.TroubleToggle)
+vim.keymap.set("n", "<Leader>lt", trouble.toggle) --vim.cmd.TroubleToggle)
