@@ -61,19 +61,12 @@ local plugins = {
     end
   },
   {
-    'tpope/vim-fugitive',
-    config = function()
-      require "mirge.plugins.fugitive"
-    end
-  },
-  {
     "folke/trouble.nvim",
     requires = "nvim-tree/nvim-web-devicons",
     config = function()
       require "mirge.plugins.trouble"
     end,
   },
-  'tpope/vim-rhubarb',
   {
     'lewis6991/gitsigns.nvim',
     -- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
@@ -104,6 +97,38 @@ local plugins = {
     'folke/neodev.nvim',
     config = function()
       require "mirge.plugins.neodev"
+    end,
+  },
+  {
+    'andweeb/presence.nvim',
+    config = function()
+      require "mirge.plugins.presence"
+    end
+  },
+  {
+    "ahmedkhalf/project.nvim",
+    config = function()
+      require "mirge.plugins.project"
+    end
+  },
+  {
+    'akinsho/toggleterm.nvim',
+    version = "*",
+    config = function()
+      require "mirge.plugins.toggleterm"
+    end,
+  },
+  {
+    "windwp/nvim-autopairs",
+    config = function()
+      require "mirge.plugins.autopairs"
+    end
+  },
+  {
+    'TimUntersberger/neogit',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      require "mirge.plugins.neogit"
     end,
   },
 }

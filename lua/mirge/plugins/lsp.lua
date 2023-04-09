@@ -6,6 +6,7 @@ local lsp = require "lsp-zero".preset({
 })
 
 local cmp = require('cmp')
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 
 cmp.setup({
   preselect = 'item',
@@ -13,6 +14,11 @@ cmp.setup({
     completeopt = 'menu,menuone,noinsert'
   },
 })
+
+cmp.event:on(
+  'confirm_done',
+  cmp_autopairs.on_confirm_done()
+)
 
 lsp.ensure_installed {
   "pyright",

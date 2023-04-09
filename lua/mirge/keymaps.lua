@@ -1,4 +1,4 @@
-vim.keymap.set("n", "<Leader>fe", vim.cmd.Ex)
+vim.keymap.set("n", "<Leader>fe", vim.cmd.Lex)
 
 --- system clipboard
 -- yank

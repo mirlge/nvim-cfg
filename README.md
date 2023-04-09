@@ -8,7 +8,7 @@
 - ripgrep
 - fd
 - [Node.js](https://nodejs.org/)
-- tree-sitter-cli (only necessary when `auto_install` is set to true in lua/mirge/plugins/lsp.lua)
+- tree-sitter-cli (only necessary when `auto_install` is set to true in lua/mirge/plugins/treesitter.lua)
 - font with icons and Powerline glyphs (for example [JetBrains Mono](https://jetbrains.com/mono))
 
 #### Installation of the prerequisites except Node.js, tree-sitter-cli and font on macOS (and Linux, proabably) with [Homebrew](https://brew.sh/)
