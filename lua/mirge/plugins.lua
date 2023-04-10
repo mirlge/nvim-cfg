@@ -131,6 +131,8 @@ local plugins = {
       require "mirge.plugins.neogit"
     end,
   },
+  'RRethy/vim-illuminate',
+  { 'edluffy/hologram.nvim', opts = { auto_display = true } },
 }
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
