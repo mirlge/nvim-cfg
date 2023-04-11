@@ -141,6 +141,15 @@ local plugins = {
       options = {
         diagnostics = "nvim_lsp",
         mode = "tabs",
+        sidebar_offsets = true,
+        offsets = {
+          {
+            filetype = "NvimTree",
+            text = "File Explorer",
+            text_align = "center",
+            separator = true,
+          },
+        },
       },
     },
   },
