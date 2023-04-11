@@ -133,6 +133,28 @@ local plugins = {
   },
   'RRethy/vim-illuminate',
   { 'edluffy/hologram.nvim', opts = { auto_display = true } },
+  {
+    'akinsho/bufferline.nvim',
+    version = "v3.*",
+    dependencies = 'nvim-tree/nvim-web-devicons',
+    opts = {
+      options = {
+        diagnostics = "nvim_lsp",
+        mode = "tabs",
+      },
+    },
+  },
+  {
+    "nvim-tree/nvim-tree.lua",
+    version = "*",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+    opts = {},
+    init = function()
+      require "mirge.plugins.nvim-tree"
+    end,
+  },
 }
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
