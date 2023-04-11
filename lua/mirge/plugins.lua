@@ -164,6 +164,18 @@ local plugins = {
       require "mirge.plugins.nvim-tree"
     end,
   },
+  {
+    'chipsenkbeil/distant.nvim',
+    branch = 'v0.2',
+    opts = {
+      -- Applies Chip's personal settings to every machine you connect to
+      --
+      -- 1. Ensures that distant servers terminate with no connections
+      -- 2. Provides navigation bindings for remote directories
+      -- 3. Provides keybinding to jump into a remote file's parent directory
+      --['*'] = require('distant.settings').chip_default()
+    },
+  },
 }
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
