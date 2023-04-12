@@ -62,7 +62,7 @@ local plugins = {
   },
   {
     "folke/trouble.nvim",
-    requires = "nvim-tree/nvim-web-devicons",
+    dependencies = "nvim-tree/nvim-web-devicons",
     config = function()
       require "mirge.plugins.trouble"
     end,
@@ -76,7 +76,7 @@ local plugins = {
   },
   {
     'nvim-lualine/lualine.nvim',
-    requires = { 'nvim-tree/nvim-web-devicons', opt = true },
+    dependencies = { 'nvim-tree/nvim-web-devicons', opt = true },
     config = function()
       require "mirge.plugins.lualine"
     end,

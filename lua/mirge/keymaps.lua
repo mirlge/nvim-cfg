@@ -15,3 +15,7 @@ vim.keymap.set("n", "<Leader>tn", vim.cmd.tabnew)
 vim.keymap.set("n", "<Leader>t<Tab>", vim.cmd.tabn)
 vim.keymap.set("n", "<Leader>t<S-Tab>", vim.cmd.tabp)
 --vim.keymap.set("n", "<Leader>tc", vim.cmd.tabc)
+
+-- buffers
+vim.keymap.set("n", "<Leader>b<Tab>", vim.cmd.bnext)
+vim.keymap.set("n", "<Leader>b<S-Tab>", vim.cmd.bprev)
