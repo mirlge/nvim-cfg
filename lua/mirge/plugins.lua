@@ -181,6 +181,11 @@ local plugins = {
     config = true,
     cmd = "Glow",
   },
+  {
+    "folke/todo-comments.nvim",
+    dependencies = "nvim-lua/plenary.nvim",
+    opts = {},
+  },
 }
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
