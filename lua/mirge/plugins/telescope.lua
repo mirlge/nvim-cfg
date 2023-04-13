@@ -4,13 +4,13 @@ local telescope = require "telescope"
 --local actions = require "telescope.actions"
 local trouble = require "trouble.providers.telescope"
 
-vim.keymap.set('n', '<Leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<Leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<Leader>bf', builtin.buffers, {})
-vim.keymap.set('n', '<Leader>hf', builtin.help_tags, {})
-vim.keymap.set('n', '<Leader>gf', builtin.git_files, {})
---vim.keymap.set('n', '<Leader>ps', function() builtin.grep_string({ search = vim.fn.input("Grep > ") }) end, {})
-vim.keymap.set('n', '<Leader>kf', builtin.keymaps, {})
+vim.keymap.set('n', '<Leader>ff', builtin.find_files, { desc = "Find files" })
+vim.keymap.set('n', '<Leader>fg', builtin.live_grep, { desc = "Live grep" })
+vim.keymap.set('n', '<Leader>bf', builtin.buffers, { desc = "Find buffers" })
+vim.keymap.set('n', '<Leader>hf', builtin.help_tags, { desc = "Find help tags" })
+vim.keymap.set('n', '<Leader>gf', builtin.git_files, { desc = "Find files in git tree" })
+--vim.keymap.set('n', '<Leader>ps', function() builtin.grep_string({ search = vim.fn.input("Grep > ") }) end, {desc="Grep files"})
+vim.keymap.set('n', '<Leader>kf', builtin.keymaps, { desc = "Find keymaps" })
 
 telescope.setup {
   defaults = {

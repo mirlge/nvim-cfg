@@ -6,4 +6,5 @@ require("project_nvim").setup {
 
 require('telescope').load_extension('projects')
 
-vim.keymap.set("n", "<Leader>pf", function() require "telescope".extensions.projects.projects {} end)
+vim.keymap.set("n", "<Leader>pf", function() require "telescope".extensions.projects.projects {} end,
+{ desc = "Find projects" })
