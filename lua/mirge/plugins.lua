@@ -176,6 +176,11 @@ local plugins = {
       --['*'] = require('distant.settings').chip_default()
     },
   },
+  {
+    "ellisonleao/glow.nvim",
+    config = true,
+    cmd = "Glow",
+  },
 }
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
