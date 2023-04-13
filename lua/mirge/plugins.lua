@@ -227,6 +227,11 @@ local plugins = {
       show_current_context_start = true,
     }
   },
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    dependencies = "nvim-lua/plenary.nvim",
+    opts = {},
+  },
 }
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -243,3 +248,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup(plugins)
+
+
+-- More plugin configuration
+require "mirge.plugins.null-ls"
