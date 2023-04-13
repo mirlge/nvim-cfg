@@ -214,6 +214,12 @@ local plugins = {
       -- refer to the configuration section below
     }
   },
+  {
+    "goolord/alpha-nvim",
+    config = function()
+      require "mirge.plugins.alpha"
+    end,
+  }
 }
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
