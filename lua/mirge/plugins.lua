@@ -219,7 +219,14 @@ local plugins = {
     config = function()
       require "mirge.plugins.alpha"
     end,
-  }
+  },
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    opts = {
+      show_current_context = true,
+      show_current_context_start = true,
+    }
+  },
 }
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
