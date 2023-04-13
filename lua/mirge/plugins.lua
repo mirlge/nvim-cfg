@@ -232,6 +232,29 @@ local plugins = {
     dependencies = "nvim-lua/plenary.nvim",
     opts = {},
   },
+  {
+    "jay-babu/mason-null-ls.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = {
+      "williamboman/mason.nvim",
+      "jose-elias-alvarez/null-ls.nvim",
+    },
+    opts = {},
+  },
+  {
+    "mfussenegger/nvim-dap",
+    config = function()
+      require "mirge.plugins.dap"
+    end,
+  },
+  {
+    "jay-babu/mason-nvim-dap.nvim",
+    dependencies = {
+      "williamboman/mason.nvim",
+      "mfussenegger/nvim-dap",
+    },
+    opts = {},
+  },
 }
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
