@@ -19,3 +19,4 @@ vim.keymap.set("n", "<Leader>t<S-Tab>", vim.cmd.tabp, { desc = "Go to previous t
 -- buffers
 vim.keymap.set("n", "<Leader>b<Tab>", vim.cmd.bnext, { desc = "Go to next buffer" })
 vim.keymap.set("n", "<Leader>b<S-Tab>", vim.cmd.bprev, { desc = "Go to previous buffer" })
+vim.keymap.set("n", "<Leader>bd", vim.cmd.bdelete, { desc = "Delete current buffer" })
