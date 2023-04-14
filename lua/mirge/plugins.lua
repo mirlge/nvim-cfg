@@ -124,9 +124,7 @@ local plugins = {
   {
     'akinsho/toggleterm.nvim',
     version = "*",
-    config = function()
-      require "mirge.plugins.toggleterm"
-    end,
+    opts = {},
   },
   {
     "windwp/nvim-autopairs",
@@ -281,3 +279,4 @@ require("lazy").setup(plugins)
 -- More plugin configuration
 require "mirge.plugins.null-ls"
 require "mirge.plugins.norg"
+require "mirge.plugins.toggleterm"

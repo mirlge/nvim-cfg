@@ -1,1 +1,1 @@
-require "toggleterm".setup()
+vim.keymap.set("n", "<Leader>$", vim.cmd.ToggleTerm)
