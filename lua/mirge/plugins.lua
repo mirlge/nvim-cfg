@@ -134,26 +134,6 @@ local plugins = {
   'RRethy/vim-illuminate',
   { 'edluffy/hologram.nvim', opts = { auto_display = true } },
   {
-    'akinsho/bufferline.nvim',
-    version = "v3.*",
-    dependencies = 'nvim-tree/nvim-web-devicons',
-    opts = {
-      options = {
-        diagnostics = "nvim_lsp",
-        mode = "tabs",
-        sidebar_offsets = true,
-        offsets = {
-          {
-            filetype = "NvimTree",
-            text = "File Explorer",
-            text_align = "center",
-            separator = true,
-          },
-        },
-      },
-    },
-  },
-  {
     "nvim-tree/nvim-tree.lua",
     version = "*",
     dependencies = {
@@ -255,6 +235,12 @@ local plugins = {
             },
           },
         },
+        ["core.integrations.treesitter"] = {},
+        ["core.norg.completion"] = {
+          config = {
+            engine = "nvim-cmp",
+          },
+        },
       },
     },
     dependencies = { "nvim-lua/plenary.nvim" },
@@ -279,3 +265,4 @@ require("lazy").setup(plugins)
 
 -- More plugin configuration
 require "mirge.plugins.null-ls"
+require "mirge.plugins.norg"

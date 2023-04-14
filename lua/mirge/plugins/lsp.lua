@@ -13,6 +13,9 @@ cmp.setup({
   completion = {
     completeopt = 'menu,menuone,noinsert'
   },
+  sources = {
+    { name = "neorg" },
+  },
 })
 
 cmp.event:on(

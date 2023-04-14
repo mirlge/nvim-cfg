@@ -19,4 +19,5 @@ wk.register({
   k = { name = "Keymap" },
   l = { name = "LSP" },
   d = { name = "DAP" },
+  o = { name = "Neorg" },
 }, { prefix = "<Leader>" })
