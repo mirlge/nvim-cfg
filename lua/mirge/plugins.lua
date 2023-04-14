@@ -77,9 +77,19 @@ local plugins = {
   {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons', opt = true },
-    config = function()
-      require "mirge.plugins.lualine"
-    end,
+    opts = {
+      sections = {
+        lualine_a = { {
+          'buffers',
+          filetype_names = {
+            NvimTree = 'File Explorer'
+          },
+          use_mode_colors = true,
+        } },
+        lualine_c = {},
+        lualine_y = { 'filesize' }
+      },
+    },
   },
   {
     'numToStr/Comment.nvim',
