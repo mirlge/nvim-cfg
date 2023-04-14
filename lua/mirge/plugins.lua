@@ -241,6 +241,11 @@ local plugins = {
             engine = "nvim-cmp",
           },
         },
+        ["core.presenter"] = {
+          config = {
+            zen_mode = "zen-mode",
+          }
+        },
       },
     },
     dependencies = { "nvim-lua/plenary.nvim" },
