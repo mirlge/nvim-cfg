@@ -24,6 +24,10 @@ local plugins = {
     opts = {},
   },
   {
+    "nvim-treesitter/nvim-tree-docs",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+  },
+  {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v2.x',
     dependencies = {
