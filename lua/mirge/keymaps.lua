@@ -20,3 +20,7 @@ vim.keymap.set("n", "<Leader>tc", vim.cmd.tabc, { desc = "Close current tab" })
 vim.keymap.set("n", "<Leader>b<Tab>", vim.cmd.bnext, { desc = "Go to next buffer" })
 vim.keymap.set("n", "<Leader>b<S-Tab>", vim.cmd.bprev, { desc = "Go to previous buffer" })
 vim.keymap.set("n", "<Leader>bd", vim.cmd.bdelete, { desc = "Delete current buffer" })
+
+-- moving lines
+vim.keymap.set({ "n", "v" }, "<A-j>", function() vim.cmd.m(".+") end)
+vim.keymap.set({ "n", "v" }, "<A-k>", function() vim.cmd.m(".-2") end)

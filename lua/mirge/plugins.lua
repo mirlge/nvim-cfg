@@ -9,12 +9,12 @@ local plugins = {
       require "mirge.plugins.treesitter"
     end,
   },
-  'nvim-treesitter/playground',
   {
     'rose-pine/neovim',
     name = 'rose-pine',
     config = function() require "mirge.plugins.rose-pine" end,
   },
+  "nvim-treesitter/nvim-treesitter-refactor",
   {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v2.x',

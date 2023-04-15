@@ -21,3 +21,10 @@ wk.register({
   d = { name = "DAP" },
   o = { name = "Neorg" },
 }, { prefix = "<Leader>" })
+
+wk.register({
+  r = {
+    name = "Refactor",
+    r = "Smart rename"
+  },
+}, { prefix = "g" })
