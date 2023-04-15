@@ -14,7 +14,15 @@ local plugins = {
     name = 'rose-pine',
     config = function() require "mirge.plugins.rose-pine" end,
   },
-  "nvim-treesitter/nvim-treesitter-refactor",
+  {
+    "nvim-treesitter/nvim-treesitter-refactor",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+  },
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+    opts = {},
+  },
   {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v2.x',
