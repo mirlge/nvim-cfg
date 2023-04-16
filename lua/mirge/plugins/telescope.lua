@@ -13,6 +13,7 @@ vim.keymap.set("n", "<Leader>gb", builtin.git_branches, { desc = "Find branches"
 vim.keymap.set("n", "<Leader>gc", builtin.git_commits, { desc = "Inspect commits" })
 --vim.keymap.set("n", "<Leader>ps", function() builtin.grep_string({ search = vim.fn.input("Grep > ") }) end, {desc="Grep files"})
 vim.keymap.set("n", "<Leader>kf", builtin.keymaps, { desc = "Find keymaps" })
+vim.keymap.set("n", "<Leader>bz", builtin.current_buffer_fuzzy_find, { desc = "Find text in current buffer" })
 
 telescope.setup {
   defaults = {

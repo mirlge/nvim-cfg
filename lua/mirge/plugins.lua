@@ -43,9 +43,27 @@ local plugins = {
       { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
       -- Autocompletion
-      { 'hrsh7th/nvim-cmp' },     -- Required
+      {
+        'hrsh7th/nvim-cmp',
+        opts = {
+          preselect = 'item',
+          completion = {
+            completeopt = 'menu,menuone,noinsert'
+          },
+          sources = {
+            { name = "nvim_lsp" },
+            { name = "neorg" },
+            { name = "buffer" },
+            { name = "luasnip" },
+            { name = "path" },
+          },
+        },
+      },                          -- Required
       { 'hrsh7th/cmp-nvim-lsp' }, -- Required
       { 'L3MON4D3/LuaSnip' },     -- Required
+      { 'saadparwaiz1/cmp_luasnip' },
+      { 'hrsh7th/cmp-path' },
+      { 'hrsh7th/cmp-buffer' },
     },
     config = function()
       require "mirge.plugins.lsp"
@@ -216,7 +234,9 @@ local plugins = {
   {
     "jose-elias-alvarez/null-ls.nvim",
     dependencies = "nvim-lua/plenary.nvim",
-    opts = {},
+    config = function()
+      require "mirge.plugins.null-ls"
+    end,
   },
   {
     "jay-babu/mason-null-ls.nvim",
