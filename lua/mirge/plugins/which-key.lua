@@ -17,7 +17,10 @@ wk.register({
   h = { name = "Help" },
   g = { name = "Git" },
   k = { name = "Keymap" },
-  l = { name = "LSP" },
+  l = {
+    name = "LSP",
+    c = { name = "Code" }
+  },
   d = { name = "DAP" },
   o = { name = "Neorg" },
 }, { prefix = "<Leader>" })
