@@ -196,8 +196,8 @@ local plugins = {
   },
   {
     "ellisonleao/glow.nvim",
-    config = true,
     cmd = "Glow",
+    opts = {},
   },
   {
     "folke/todo-comments.nvim",
