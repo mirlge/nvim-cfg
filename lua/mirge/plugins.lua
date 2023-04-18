@@ -219,12 +219,6 @@ local plugins = {
     }
   },
   {
-    "goolord/alpha-nvim",
-    config = function()
-      require "mirge.plugins.alpha"
-    end,
-  },
-  {
     "lukas-reineke/indent-blankline.nvim",
     opts = {
       show_current_context = true,
