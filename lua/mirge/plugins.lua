@@ -56,6 +56,7 @@ local plugins = {
             { name = "buffer" },
             { name = "luasnip" },
             { name = "path" },
+            { name = "orgmode" },
           },
         },
       },                          -- Required
@@ -284,6 +285,14 @@ local plugins = {
     },
     dependencies = { "nvim-lua/plenary.nvim" },
   },
+  "ThePrimeagen/vim-be-good",
+  {
+    'nvim-orgmode/orgmode',
+    opts = {
+      org_agenda_files = { "~/Nextcloud/org/*" },
+      org_default_notes_file = "~/Nextcloud/org/refile.org",
+    },
+  },
 }
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -306,3 +315,4 @@ require("lazy").setup(plugins)
 require "mirge.plugins.null-ls"
 require "mirge.plugins.norg"
 require "mirge.plugins.toggleterm"
+require "mirge.plugins.orgmode"

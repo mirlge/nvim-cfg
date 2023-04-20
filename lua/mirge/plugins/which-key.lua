@@ -22,12 +22,16 @@ wk.register({
     c = { name = "Code" }
   },
   d = { name = "DAP" },
-  o = { name = "Neorg" },
+  o = {
+    name = "Neorg and OrgMode",
+    i = { name = "org insert" },
+    x = { name = "org clock" }
+  },
 }, { prefix = "<Leader>" })
 
 wk.register({
   r = {
     name = "Refactor",
-    r = "Smart rename"
+    r = "Smart rename",
   },
 }, { prefix = "g" })
