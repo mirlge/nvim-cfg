@@ -9,6 +9,7 @@ vim.keymap.set({ "n", "v" }, "<Leader>Y", "\"+Y", { desc = "Y, but to system cli
 -- paste
 vim.keymap.set({ "n", "v" }, "<Leader>p", "\"+p", { desc = "p, but to system clipboard" })
 vim.keymap.set({ "n", "v" }, "<Leader>P", "\"+P", { desc = "P, but to system clipboard" })
+vim.keymap.set("x", "<Leader>p", [["_dP]], { desc = "Replace with yanked text without overwriting it" })
 
 -- tabs
 vim.keymap.set("n", "<Leader>tn", vim.cmd.tabnew, { desc = "Create a new tab" })
@@ -24,3 +25,5 @@ vim.keymap.set("n", "<Leader>bd", vim.cmd.bdelete, { desc = "Delete current buff
 -- moving lines
 vim.keymap.set({ "n", "v" }, "<A-j>", function() vim.cmd.m(".+") end)
 vim.keymap.set({ "n", "v" }, "<A-k>", function() vim.cmd.m(".-2") end)
+
+vim.keymap.set("n", "<Leader><Leader>", vim.cmd.so)
