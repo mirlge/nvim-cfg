@@ -13,6 +13,7 @@ local plugins = {
     'rose-pine/neovim',
     name = 'rose-pine',
     config = function() require "mirge.plugins.rose-pine" end,
+    priority = 100,
   },
   {
     "nvim-treesitter/nvim-treesitter-refactor",
@@ -146,6 +147,7 @@ local plugins = {
   {
     "folke/neoconf.nvim",
     opts = {},
+    priority = 99,
   },
   {
     'folke/neodev.nvim',
