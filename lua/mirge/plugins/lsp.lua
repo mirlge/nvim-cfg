@@ -21,7 +21,7 @@ lsp.ensure_installed {
 }
 
 lsp.on_attach(function(client, bufnr)
-  lsp.default_keymaps({ buffer = bufnr })
+  lsp.default_keymaps { buffer = bufnr }
   vim.keymap.set("n", "<Leader>lf", vim.lsp.buf.format, { desc = "Format the current buffer" })
   vim.keymap.set("n", "<Leader>lca", vim.lsp.buf.code_action, { desc = "Code action" })
 

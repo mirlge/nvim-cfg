@@ -57,6 +57,9 @@ local plugins = {
             { name = "luasnip" },
             { name = "path" },
             { name = "orgmode" },
+            { name = "emoji" },
+            { name = "calc" },
+            { name = "git" },
           },
         },
       },                          -- Required
@@ -65,6 +68,12 @@ local plugins = {
       { 'saadparwaiz1/cmp_luasnip' },
       { 'hrsh7th/cmp-path' },
       { 'hrsh7th/cmp-buffer' },
+      { 'hrsh7th/cmp-emoji' },
+      { 'hrsh7th/cmp-calc' },
+      {
+        'petertriho/cmp-git',
+        opts = {},
+      },
     },
     config = function()
       require "mirge.plugins.lsp"
@@ -133,6 +142,10 @@ local plugins = {
     config = function()
       require "mirge.plugins.statuscol"
     end,
+  },
+  {
+    "folke/neoconf.nvim",
+    opts = {},
   },
   {
     'folke/neodev.nvim',
