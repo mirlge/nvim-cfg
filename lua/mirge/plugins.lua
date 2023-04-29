@@ -308,6 +308,17 @@ local plugins = {
       org_default_notes_file = "~/Nextcloud/org/refile.org",
     },
   },
+  {
+    "rcarriga/nvim-notify",
+    config = function()
+      require "mirge.plugins.notify"
+    end,
+  },
+  {
+    "dmmulroy/tsc.nvim",
+    dependencies = { "rcarriga/nvim-notify" },
+    opts = {},
+  },
 }
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
