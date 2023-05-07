@@ -8,8 +8,3 @@ vim.api.nvim_create_autocmd("BufEnter", {
       { desc = "Magnify code block" })
   end,
 })
-
-vim.api.nvim_create_autocmd("BufWritePost", {
-  pattern = { "*.norg" },
-  callback = function() vim.cmd.Neorg("tangle", "current-file") end,
-})
