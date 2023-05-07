@@ -276,9 +276,9 @@ local plugins = {
     build = ":Neorg sync-parsers",
     opts = {
       load = {
-        ["core.defaults"] = {},       -- Loads default behaviour
-        ["core.norg.concealer"] = {}, -- Adds pretty icons to your documents
-        ["core.norg.dirman"] = {      -- Manages Neorg workspaces
+        ["core.defaults"] = {},  -- Loads default behaviour
+        ["core.concealer"] = {}, -- Adds pretty icons to your documents
+        ["core.dirman"] = {      -- Manages Neorg workspaces
           config = {
             workspaces = {
               notes = "~/Nextcloud/norg/notes",
@@ -286,7 +286,7 @@ local plugins = {
           },
         },
         ["core.integrations.treesitter"] = {},
-        ["core.norg.completion"] = {
+        ["core.completion"] = {
           config = {
             engine = "nvim-cmp",
           },
