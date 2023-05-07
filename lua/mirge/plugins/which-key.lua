@@ -13,7 +13,7 @@ wk.register({
     h = { name = "Harpoon" },
   },
   b = { name = "Buffer" },
-  t = { name = "Tabs" },
+  t = { name = "Neorg TODO" },
   h = { name = "Help" },
   g = { name = "Git" },
   k = { name = "Keymap" },

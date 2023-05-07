@@ -298,7 +298,7 @@ local plugins = {
         },
       },
     },
-    dependencies = { "nvim-lua/plenary.nvim" },
+    dependencies = { { "nvim-lua/plenary.nvim" } },
   },
   "ThePrimeagen/vim-be-good",
   {
