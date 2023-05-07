@@ -23,7 +23,7 @@ wk.register({
   },
   d = { name = "DAP" },
   o = {
-    name = "Neorg and OrgMode",
+    name = "(Ne)org",
     i = { name = "org insert" },
     x = { name = "org clock" }
   },
