@@ -188,17 +188,6 @@ local plugins = {
   'RRethy/vim-illuminate',
   { 'edluffy/hologram.nvim', opts = { auto_display = true } },
   {
-    "nvim-tree/nvim-tree.lua",
-    version = "*",
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-    },
-    opts = {},
-    init = function()
-      require "mirge.plugins.nvim-tree"
-    end,
-  },
-  {
     'chipsenkbeil/distant.nvim',
     branch = 'v0.2',
     opts = {
@@ -327,6 +316,12 @@ local plugins = {
       -- Configuration here, or leave empty to use defaults
     },
   },
+  {
+    'stevearc/oil.nvim',
+    opts = {},
+    -- Optional dependencies
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
 }
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -350,3 +345,4 @@ require "mirge.plugins.null-ls"
 require "mirge.plugins.norg"
 require "mirge.plugins.toggleterm"
 require "mirge.plugins.orgmode"
+require "mirge.plugins.oil"
