@@ -339,6 +339,11 @@ local plugins = {
           vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
         end,
       },
+      tools = {
+        hover_actions = {
+          auto_focus = true,
+        },
+      },
     },
     dependencies = {
       'neovim/nvim-lspconfig',
