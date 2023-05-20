@@ -1,23 +1,79 @@
--- netrw file explorer
---vim.keymap.set("n", "<Leader>fe", vim.cmd.Lex)
+local M = {
+  keymaps = {
+    --- system clipboard
+    -- yank
+    { modes = { "n", "v" }, key = "<Leader>y", opts = { desc = "y, but to system clipboard" }, action = "\"+y" },
+    { modes = { "n", "v" }, key = "<Leader>Y", opts = { desc = "Y, but to system clipboard" }, action = "\"+Y" },
 
---- system clipboard
--- yank
-vim.keymap.set({ "n", "v" }, "<Leader>y", "\"+y", { desc = "y, but to system clipboard" })
-vim.keymap.set({ "n", "v" }, "<Leader>Y", "\"+Y", { desc = "Y, but to system clipboard" })
+    -- paste
+    {
+      modes = { "n", "v" },
+      key = "<Leader>p",
+      action = "\"+p",
+      opts = {
+        desc = "p, but from system clipboard" }
+    },
+    {
+      modes = { "n", "v" },
+      key = "<Leader>P",
+      action = "\"+P",
+      opts = {
+        desc = "P, but from system clipboard" },
+    },
+    {
+      modes = "x",
+      key = "<Leader>p",
+      action = [["_dP]],
+      opts = { desc = "Replace with yanked text without overwriting it" },
+    },
 
--- paste
-vim.keymap.set({ "n", "v" }, "<Leader>p", "\"+p", { desc = "p, but to system clipboard" })
-vim.keymap.set({ "n", "v" }, "<Leader>P", "\"+P", { desc = "P, but to system clipboard" })
-vim.keymap.set("x", "<Leader>p", [["_dP]], { desc = "Replace with yanked text without overwriting it" })
 
--- buffers
-vim.keymap.set("n", "<Leader>b<Tab>", vim.cmd.bnext, { desc = "Go to next buffer" })
-vim.keymap.set("n", "<Leader>b<S-Tab>", vim.cmd.bprev, { desc = "Go to previous buffer" })
-vim.keymap.set("n", "<Leader>bd", vim.cmd.bdelete, { desc = "Delete current buffer" })
+    -- buffers
+    {
+      modes = "n",
+      key = "<Leader>b<Tab>",
+      action = vim.cmd.bnext,
+      opts = {
+        desc = "Go to next buffer" },
+    },
+    {
+      modes = "n",
+      key = "<Leader>b<S-Tab>",
+      action = vim.cmd.bprev,
+      opts = {
+        desc = "Go to previous buffer" },
+    },
+    {
+      modes = "n",
+      key = "<Leader>bd",
+      action = vim.cmd.bdelete,
+      opts = {
+        desc = "Delete current buffer" },
+    },
 
--- moving lines
-vim.keymap.set({ "n", "v" }, "<A-j>", function() vim.cmd.m(".+") end)
-vim.keymap.set({ "n", "v" }, "<A-k>", function() vim.cmd.m(".-2") end)
+    -- moving lines
+    {
+      modes = { "n", "v" },
+      key = "<A-j>",
+      action = function() vim.cmd.m(".+") end,
+      opts = {
+        desc = "Move line(s) up one line" },
+    },
+    {
+      modes = { "n", "v" },
+      key = "<A-k>",
+      action = function() vim.cmd.m(".-2") end,
+      opts = { desc = "Move line(s) down one line" },
+    },
+    { modes = "n", key = "<Leader><Leader>", action = vim.cmd.so, opts = { desc = "Source the current file" } },
+  }
+}
 
-vim.keymap.set("n", "<Leader><Leader>", vim.cmd.so)
+function M.setup()
+  for i = 1, #M.keymaps do
+    local keymap = M.keymaps[i]
+    vim.keymap.set(keymap.modes, keymap.key, keymap.action, keymap.opts or {})
+  end
+end
+
+return M
