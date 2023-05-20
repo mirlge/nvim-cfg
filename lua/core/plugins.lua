@@ -6,13 +6,13 @@ local plugins = {
       require "nvim-treesitter.install".update { with_sync = true }
     end,
     config = function()
-      require "mirge.plugins.treesitter"
+      require "core.plugins.treesitter"
     end,
   },
   {
     'rose-pine/neovim',
     name = 'rose-pine',
-    config = function() require "mirge.plugins.rose-pine" end,
+    config = function() require "core.plugins.rose-pine" end,
     priority = 100,
   },
   {
@@ -77,7 +77,7 @@ local plugins = {
       },
     },
     config = function()
-      require "mirge.plugins.lsp"
+      require "core.plugins.lsp"
     end,
   },
   {
@@ -86,33 +86,33 @@ local plugins = {
     -- or branch = '0.1.1'
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
-      require "mirge.plugins.telescope"
+      require "core.plugins.telescope"
     end,
   },
   {
     'theprimeagen/harpoon',
     config = function()
-      require "mirge.plugins.harpoon"
+      require "core.plugins.harpoon"
     end,
   },
   {
     'mbbill/undotree',
     config = function()
-      require "mirge.plugins.undotree"
+      require "core.plugins.undotree"
     end
   },
   {
     "folke/trouble.nvim",
     dependencies = "nvim-tree/nvim-web-devicons",
     config = function()
-      require "mirge.plugins.trouble"
+      require "core.plugins.trouble"
     end,
   },
   {
     'lewis6991/gitsigns.nvim',
     -- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
     config = function()
-      require "mirge.plugins.gitsigns"
+      require "core.plugins.gitsigns"
     end,
   },
   {
@@ -135,13 +135,13 @@ local plugins = {
   {
     'numToStr/Comment.nvim',
     config = function()
-      require "mirge.plugins.Comment" --('Comment').setup()
+      require "core.plugins.Comment" --('Comment').setup()
     end,
   },
   {
     'luukvbaal/statuscol.nvim',
     config = function()
-      require "mirge.plugins.statuscol"
+      require "core.plugins.statuscol"
     end,
   },
   {
@@ -152,19 +152,19 @@ local plugins = {
   {
     'folke/neodev.nvim',
     config = function()
-      require "mirge.plugins.neodev"
+      require "core.plugins.neodev"
     end,
   },
   {
     'andweeb/presence.nvim',
     config = function()
-      require "mirge.plugins.presence"
+      require "core.plugins.presence"
     end
   },
   {
     "ahmedkhalf/project.nvim",
     config = function()
-      require "mirge.plugins.project"
+      require "core.plugins.project"
     end
   },
   {
@@ -175,14 +175,14 @@ local plugins = {
   {
     "windwp/nvim-autopairs",
     config = function()
-      require "mirge.plugins.autopairs"
+      require "core.plugins.autopairs"
     end
   },
   {
     'TimUntersberger/neogit',
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
-      require "mirge.plugins.neogit"
+      require "core.plugins.neogit"
     end,
   },
   'RRethy/vim-illuminate',
@@ -212,7 +212,7 @@ local plugins = {
   {
     "folke/which-key.nvim",
     config = function()
-      require "mirge.plugins.which-key"
+      require "core.plugins.which-key"
     end,
   },
   {
@@ -234,7 +234,7 @@ local plugins = {
     "jose-elias-alvarez/null-ls.nvim",
     dependencies = "nvim-lua/plenary.nvim",
     config = function()
-      require "mirge.plugins.null-ls"
+      require "core.plugins.null-ls"
     end,
   },
   {
@@ -249,7 +249,7 @@ local plugins = {
   {
     "mfussenegger/nvim-dap",
     config = function()
-      require "mirge.plugins.dap"
+      require "core.plugins.dap"
     end,
   },
   {
@@ -300,7 +300,7 @@ local plugins = {
   {
     "rcarriga/nvim-notify",
     config = function()
-      require "mirge.plugins.notify"
+      require "core.plugins.notify"
     end,
   },
   {
@@ -341,8 +341,8 @@ require("lazy").setup(plugins)
 
 
 -- More plugin configuration
-require "mirge.plugins.null-ls"
-require "mirge.plugins.norg"
-require "mirge.plugins.toggleterm"
-require "mirge.plugins.orgmode"
-require "mirge.plugins.oil"
+require "core.plugins.null-ls"
+require "core.plugins.norg"
+require "core.plugins.toggleterm"
+require "core.plugins.orgmode"
+require "core.plugins.oil"
