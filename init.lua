@@ -1,3 +1,3 @@
-core = require "core"
+local core = require "core"
 -- Do your configuration here
 core.setup()
