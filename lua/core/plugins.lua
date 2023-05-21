@@ -78,44 +78,75 @@ M.plugins = {
         opts = {},
       },
     },
-    config = function()
-      require "core.plugins.lsp"
-    end,
   },
   telescope = {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.1',
     -- or branch = '0.1.1'
     dependencies = { 'nvim-lua/plenary.nvim' },
-    config = function()
-      require "core.plugins.telescope"
-    end,
+    opts = {
+      defaults = {
+        mappings = {
+          i = { ["<C-t>"] = function() require "trouble.providers.telescope".open_with_trouble() end },
+          n = { ["<C-t>"] = function() require "trouble.providers.telescope".open_with_trouble() end },
+        },
+      },
+    },
+    keys = {
+      { "<Leader>ff", function() require "telescope.builtin".find_files() end, desc = "Find files" },
+      { "<Leader>fg", function() require "telescope.builtin".live_grep() end,  desc = "Live grep" },
+      { "<Leader>bf", function() require "telescope.builtin".buffers() end,    desc = "Find buffers" },
+      { "<Leader>hf", function() require "telescope.builtin".help_tags() end,  desc = "Find help tags" },
+      {
+        "<Leader>gf",
+        function() require "telescope.builtin".git_files() end,
+        desc =
+        "Find files in git tree"
+      },
+      { "<Leader>gb", function() require "telescope.builtin".git_branches() end, desc = "Find branches" },
+      { "<Leader>gc", function() require "telescope.builtin".git_commits() end,  desc = "Inspect commits" },
+      { "<Leader>kf", function() require "telescope.builtin".keymaps() end,      desc = "Find keymaps" },
+      {
+        "<Leader>bz",
+        function() require "telescope.builtin".current_buffer_fuzzy_find() end,
+        desc =
+        "Find text in current buffer"
+      },
+    },
   },
   harpoon = {
     'theprimeagen/harpoon',
     config = function()
       require "core.plugins.harpoon"
     end,
+    keys = {
+      { "<Leader>fha", function() require "harpoon.mark".add_file() end,        desc = "Add current file to Harpoon" },
+      { "<Leader>fhc", function() require "harpoon.mark".clear_all() end,       desc = "Clear all files in Harpoon" },
+      { "<Leader>fht", function() require "harpoon.ui".toggle_quick_menu() end, desc = "Toggle Harpoon quick menu" },
+    },
   },
   undotree = {
     'mbbill/undotree',
-    config = function()
-      require "core.plugins.undotree"
-    end
+    keys = {
+      { "<Leader>u", vim.cmd.UndotreeToggle, desc = "Toggle Undotree" },
+    },
   },
   trouble = {
     "folke/trouble.nvim",
     dependencies = "nvim-tree/nvim-web-devicons",
-    config = function()
-      require "core.plugins.trouble"
-    end,
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
+    keys = {
+      { "<Leader>lt", function() require("trouble").toggle() end, desc = "Toggle Trouble" },
+    },
   },
   gitsigns = {
     'lewis6991/gitsigns.nvim',
     -- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
-    config = function()
-      require "core.plugins.gitsigns"
-    end,
+    opts = {},
   },
   lualine = {
     'nvim-lualine/lualine.nvim',
@@ -136,15 +167,26 @@ M.plugins = {
   },
   Comment = {
     'numToStr/Comment.nvim',
-    config = function()
-      require "core.plugins.Comment" --('Comment').setup()
-    end,
+    opts = {},
   },
   statuscol = {
     'luukvbaal/statuscol.nvim',
-    config = function()
-      require "core.plugins.statuscol"
-    end,
+    opts = {
+      -- configuration goes here, for example:
+      -- relculright = true,
+      -- segments = {
+      --   { text = { builtin.foldfunc }, click = "v:lua.ScFa" },
+      --   {
+      --     sign = { name = { "Diagnostic" }, maxwidth = 2, auto = true },
+      --     click = "v:lua.ScSa"
+      --   },
+      --   { text = { builtin.lnumfunc }, click = "v:lua.ScLa", },
+      --   {
+      --     sign = { name = { ".*" }, maxwidth = 2, colwidth = 1, auto = true },
+      --     click = "v:lua.ScSa"
+      --   },
+      -- }
+    },
   },
   neoconf = {
     "folke/neoconf.nvim",
@@ -153,39 +195,51 @@ M.plugins = {
   },
   neodev = {
     'folke/neodev.nvim',
-    config = function()
-      require "core.plugins.neodev"
-    end,
+    opts = {
+      library = { plugins = { "nvim-dap-ui" }, types = true },
+    },
   },
   presence = {
     'andweeb/presence.nvim',
-    config = function()
-      require "core.plugins.presence"
-    end
+    opts = {
+      main_image = "file",
+    },
   },
   project = {
     "ahmedkhalf/project.nvim",
-    config = function()
-      require "core.plugins.project"
-    end
+    main = "project_nvim",
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
+    keys = {
+      {
+        "<Leader>pf",
+        function() require "telescope".extensions.projects.projects {} end,
+        desc = "Find projects",
+      },
+    },
   },
   toggleterm = {
     'akinsho/toggleterm.nvim',
     version = "*",
     opts = {},
+    keys = {
+      { "<Leader>$", vim.cmd.ToggleTerm, desc = "Open a new terminal" },
+    },
   },
   autopairs = {
     "windwp/nvim-autopairs",
-    config = function()
-      require "core.plugins.autopairs"
-    end
+    opts = {},
   },
   neogit = {
     'TimUntersberger/neogit',
     dependencies = { 'nvim-lua/plenary.nvim' },
-    config = function()
-      require "core.plugins.neogit"
-    end,
+    opts = {},
+    keys = {
+      { "<Leader>gs", function() require "neogit".open({ kind = "split" }) end, desc = "Open Neogit" },
+    },
   },
   illuminate = { 'RRethy/vim-illuminate' },
   hologram = { 'edluffy/hologram.nvim', opts = { auto_display = true } },
@@ -213,9 +267,11 @@ M.plugins = {
   },
   which_key = {
     "folke/which-key.nvim",
-    config = function()
-      require "core.plugins.which-key"
-    end,
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
   },
   zen_mode = {
     "folke/zen-mode.nvim",
@@ -237,7 +293,7 @@ M.plugins = {
     dependencies = "nvim-lua/plenary.nvim",
     config = function()
       require "core.plugins.null-ls"
-    end,
+    end
   },
   mason_null_ls = {
     "jay-babu/mason-null-ls.nvim",
@@ -250,9 +306,9 @@ M.plugins = {
   },
   dap = {
     "mfussenegger/nvim-dap",
-    config = function()
-      require "core.plugins.dap"
-    end,
+    keys = {
+      { "<Leader>db", function() require "dap".toggle_breakpoint() end, desc = "Toggle breakpoint" },
+    },
   },
   dap_ui = {
     "rcarriga/nvim-dap-ui",
@@ -327,6 +383,9 @@ M.plugins = {
     opts = {},
     -- Optional dependencies
     dependencies = { "nvim-tree/nvim-web-devicons" },
+    keys = {
+      { "<Leader>fe", function() require("oil").open() end, desc = "Open file explorer" },
+    },
   },
   rust_tools = {
     'simrat39/rust-tools.nvim',
@@ -386,14 +445,20 @@ function M.setup()
   if M.plugins.norg.enabled == nil or M.plugins.norg.enabled then
     require "core.plugins.norg"
   end
-  if M.plugins.toggleterm.enabled == nil or M.plugins.toggleterm.enabled then
-    require "core.plugins.toggleterm"
-  end
   if M.plugins.orgmode.enabled == nil or M.plugins.orgmode.enabled then
     require "core.plugins.orgmode"
   end
-  if M.plugins.oil.enabled == nil or M.plugins.oil.enabled then
-    require "core.plugins.oil"
+  if M.plugins.project.enabled == nil or M.plugins.project.enabled then
+    require "core.plugins.project"
+  end
+  if M.plugins.neodev.enabled == nil or M.plugins.neodev.enabled then
+    require "core.plugins.neodev"
+  end
+  if M.plugins.which_key.enabled == nil or M.plugins.which_key.enabled then
+    require "core.plugins.which-key"
+  end
+  if M.plugins.lsp_zero.enabled == nil or M.plugins.lsp_zero.enabled then
+    require "core.plugins.lsp"
   end
 end
 
