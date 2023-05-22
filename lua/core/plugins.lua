@@ -5,16 +5,16 @@ M.plugins = {
   treesitter = {
     "nvim-treesitter/nvim-treesitter",
     build = function()
-      require "nvim-treesitter.install".update { with_sync = true }
+      require("nvim-treesitter.install").update { with_sync = true }
     end,
     config = function()
-      require "core.plugins.treesitter"
+      require("core.plugins.treesitter")
     end,
   },
   rose_pine = {
     'rose-pine/neovim',
     name = 'rose-pine',
-    config = function() require "core.plugins.rose-pine" end,
+    config = function() require("core.plugins.rose-pine") end,
     priority = 100,
   },
   treesitter_refactor = {
@@ -87,28 +87,28 @@ M.plugins = {
     opts = {
       defaults = {
         mappings = {
-          i = { ["<C-t>"] = function() require "trouble.providers.telescope".open_with_trouble() end },
-          n = { ["<C-t>"] = function() require "trouble.providers.telescope".open_with_trouble() end },
+          i = { ["<C-t>"] = function() require("trouble.providers.telescope").open_with_trouble() end },
+          n = { ["<C-t>"] = function() require("trouble.providers.telescope").open_with_trouble() end },
         },
       },
     },
     keys = {
-      { "<Leader>ff", function() require "telescope.builtin".find_files() end, desc = "Find files" },
-      { "<Leader>fg", function() require "telescope.builtin".live_grep() end,  desc = "Live grep" },
-      { "<Leader>bf", function() require "telescope.builtin".buffers() end,    desc = "Find buffers" },
-      { "<Leader>hf", function() require "telescope.builtin".help_tags() end,  desc = "Find help tags" },
+      { "<Leader>ff", function() require("telescope.builtin").find_files() end, desc = "Find files" },
+      { "<Leader>fg", function() require("telescope.builtin").live_grep() end,  desc = "Live grep" },
+      { "<Leader>bf", function() require("telescope.builtin").buffers() end,    desc = "Find buffers" },
+      { "<Leader>hf", function() require("telescope.builtin").help_tags() end,  desc = "Find help tags" },
       {
         "<Leader>gf",
-        function() require "telescope.builtin".git_files() end,
+        function() require("telescope.builtin").git_files() end,
         desc =
         "Find files in git tree"
       },
-      { "<Leader>gb", function() require "telescope.builtin".git_branches() end, desc = "Find branches" },
-      { "<Leader>gc", function() require "telescope.builtin".git_commits() end,  desc = "Inspect commits" },
-      { "<Leader>kf", function() require "telescope.builtin".keymaps() end,      desc = "Find keymaps" },
+      { "<Leader>gb", function() require("telescope.builtin").git_branches() end, desc = "Find branches" },
+      { "<Leader>gc", function() require("telescope.builtin").git_commits() end,  desc = "Inspect commits" },
+      { "<Leader>kf", function() require("telescope.builtin").keymaps() end,      desc = "Find keymaps" },
       {
         "<Leader>bz",
-        function() require "telescope.builtin".current_buffer_fuzzy_find() end,
+        function() require("telescope.builtin").current_buffer_fuzzy_find() end,
         desc =
         "Find text in current buffer"
       },
@@ -117,12 +117,12 @@ M.plugins = {
   harpoon = {
     'theprimeagen/harpoon',
     config = function()
-      require "core.plugins.harpoon"
+      require("core.plugins.harpoon")
     end,
     keys = {
-      { "<Leader>fha", function() require "harpoon.mark".add_file() end,        desc = "Add current file to Harpoon" },
-      { "<Leader>fhc", function() require "harpoon.mark".clear_all() end,       desc = "Clear all files in Harpoon" },
-      { "<Leader>fht", function() require "harpoon.ui".toggle_quick_menu() end, desc = "Toggle Harpoon quick menu" },
+      { "<Leader>fha", function() require("harpoon.mark").add_file() end,        desc = "Add current file to Harpoon" },
+      { "<Leader>fhc", function() require("harpoon.mark").clear_all() end,       desc = "Clear all files in Harpoon" },
+      { "<Leader>fht", function() require("harpoon.ui").toggle_quick_menu() end, desc = "Toggle Harpoon quick menu" },
     },
   },
   undotree = {
@@ -216,7 +216,7 @@ M.plugins = {
     keys = {
       {
         "<Leader>pf",
-        function() require "telescope".extensions.projects.projects {} end,
+        function() require("telescope").extensions.projects.projects {} end,
         desc = "Find projects",
       },
     },
@@ -238,7 +238,7 @@ M.plugins = {
     dependencies = { 'nvim-lua/plenary.nvim' },
     opts = {},
     keys = {
-      { "<Leader>gs", function() require "neogit".open({ kind = "split" }) end, desc = "Open Neogit" },
+      { "<Leader>gs", function() require("neogit").open({ kind = "split" }) end, desc = "Open Neogit" },
     },
   },
   illuminate = { 'RRethy/vim-illuminate' },
@@ -292,7 +292,7 @@ M.plugins = {
     "jose-elias-alvarez/null-ls.nvim",
     dependencies = "nvim-lua/plenary.nvim",
     config = function()
-      require "core.plugins.null-ls"
+      require("core.plugins.null-ls")
     end
   },
   mason_null_ls = {
@@ -307,7 +307,7 @@ M.plugins = {
   dap = {
     "mfussenegger/nvim-dap",
     keys = {
-      { "<Leader>db", function() require "dap".toggle_breakpoint() end, desc = "Toggle breakpoint" },
+      { "<Leader>db", function() require("dap").toggle_breakpoint() end, desc = "Toggle breakpoint" },
     },
   },
   dap_ui = {
@@ -362,7 +362,7 @@ M.plugins = {
   notify = {
     "rcarriga/nvim-notify",
     config = function()
-      require "core.plugins.notify"
+      require("core.plugins.notify")
     end,
   },
   tsc = {
@@ -412,6 +412,13 @@ M.plugins = {
       'mfussenegger/nvim-dap',
     },
   },
+  {
+    'echasnovski/mini.nvim',
+    version = false,
+    config = function()
+      require("core.plugins.mini")
+    end,
+  },
 }
 
 function M.setup()
@@ -440,25 +447,25 @@ function M.setup()
 
   -- More plugin configuration
   if M.plugins.null_ls.enabled == nil or M.plugins.null_ls.enabled then
-    require "core.plugins.null-ls"
+    require("core.plugins.null-ls")
   end
   if M.plugins.norg.enabled == nil or M.plugins.norg.enabled then
-    require "core.plugins.norg"
+    require("core.plugins.norg")
   end
   if M.plugins.orgmode.enabled == nil or M.plugins.orgmode.enabled then
-    require "core.plugins.orgmode"
+    require("core.plugins.orgmode")
   end
   if M.plugins.project.enabled == nil or M.plugins.project.enabled then
-    require "core.plugins.project"
+    require("core.plugins.project")
   end
   if M.plugins.neodev.enabled == nil or M.plugins.neodev.enabled then
-    require "core.plugins.neodev"
+    require("core.plugins.neodev")
   end
   if M.plugins.which_key.enabled == nil or M.plugins.which_key.enabled then
-    require "core.plugins.which-key"
+    require("core.plugins.which-key")
   end
   if M.plugins.lsp_zero.enabled == nil or M.plugins.lsp_zero.enabled then
-    require "core.plugins.lsp"
+    require("core.plugins.lsp")
   end
 end
 

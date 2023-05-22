@@ -1,14 +1,14 @@
 local M = {}
 
-local plugins = require "core.plugins"
-M.helpers = require "core.helpers"
-M.keymaps = require "core.keymaps"
+local plugins = require("core.plugins")
+M.helpers = require("core.helpers")
+M.keymaps = require("core.keymaps")
 M.plugins = plugins.plugins
 
 function M.setup()
   M.helpers.transparency()
 
-  require "core.set"
+  require("core.set")
 
   M.keymaps.setup()
 

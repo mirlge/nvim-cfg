@@ -1,4 +1,4 @@
-local lsp = require "lsp-zero".preset({
+local lsp = require("lsp-zero").preset({
   manage_nvim_cmp = {
     set_sources = 'recommended',
     set_extra_mappings = true,
