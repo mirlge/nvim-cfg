@@ -1,8 +1,11 @@
 local M = {}
 
-local plugins = require("core.plugins")
 M.helpers = require("core.helpers")
-M.keymaps = require("core.keymaps")
+
+local keymaps = require("core.keymaps")
+M.keymaps = keymaps.keymaps
+
+local plugins = require("core.plugins")
 M.plugins = plugins.plugins
 
 function M.setup()
@@ -10,7 +13,7 @@ function M.setup()
 
   require("core.set")
 
-  M.keymaps.setup()
+  keymaps.setup()
 
   plugins.setup()
 end

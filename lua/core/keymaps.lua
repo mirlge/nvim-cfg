@@ -53,14 +53,14 @@ local M = {
 
     -- moving lines
     {
-      modes = { "n", "v" },
+      modes = "n",
       key = "<A-j>",
       action = function() vim.cmd.m(".+") end,
       opts = {
         desc = "Move line(s) up one line" },
     },
     {
-      modes = { "n", "v" },
+      modes = "n",
       key = "<A-k>",
       action = function() vim.cmd.m(".-2") end,
       opts = { desc = "Move line(s) down one line" },

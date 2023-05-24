@@ -152,14 +152,18 @@ M.plugins = {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons', opt = true },
     opts = {
+      options = {
+        globalstatus = true,
+      },
       sections = {
         lualine_a = { {
           'buffers',
           filetype_names = {
-            NvimTree = 'File Explorer'
+            oil = 'File Explorer'
           },
           use_mode_colors = true,
         } },
+        lualine_b = { { 'branch', use_mode_colors = false }, 'diff', 'diagnostics' },
         lualine_c = { 'overseer' },
         lualine_y = { 'filesize' }
       },
