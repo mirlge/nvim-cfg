@@ -412,13 +412,17 @@ M.plugins = {
       'mfussenegger/nvim-dap',
     },
   },
-  {
+  mini = {
     'echasnovski/mini.nvim',
     version = false,
     config = function()
       require("core.plugins.mini")
     end,
   },
+  overseer = {
+    'stevearc/overseer.nvim',
+    opts = {},
+  }
 }
 
 function M.setup()
