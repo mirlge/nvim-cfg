@@ -22,6 +22,7 @@ wk.register({
     i = { name = "org insert" },
     x = { name = "org clock" }
   },
+  s = { name = "Session" },
 }, { prefix = "<Leader>" })
 
 wk.register({
