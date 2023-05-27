@@ -18,3 +18,9 @@ require("mini.cursorword").setup()
 
 -- mini.comment
 require("mini.comment").setup()
+
+-- mini.splitjoin
+require("mini.splitjoin").setup()
+
+-- mini.animate
+require("mini.animate").setup()
