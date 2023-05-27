@@ -169,10 +169,6 @@ M.plugins = {
       },
     },
   },
-  Comment = {
-    'numToStr/Comment.nvim',
-    opts = {},
-  },
   statuscol = {
     'luukvbaal/statuscol.nvim',
     opts = {
@@ -233,10 +229,6 @@ M.plugins = {
       { "<Leader>$", vim.cmd.ToggleTerm, desc = "Open a new terminal" },
     },
   },
-  autopairs = {
-    "windwp/nvim-autopairs",
-    opts = {},
-  },
   neogit = {
     'TimUntersberger/neogit',
     dependencies = { 'nvim-lua/plenary.nvim' },
@@ -245,7 +237,6 @@ M.plugins = {
       { "<Leader>gs", function() require("neogit").open({ kind = "split" }) end, desc = "Open Neogit" },
     },
   },
-  illuminate = { 'RRethy/vim-illuminate' },
   hologram = { 'edluffy/hologram.nvim', opts = { auto_display = true } },
   distant = {
     'chipsenkbeil/distant.nvim',
@@ -453,6 +444,7 @@ M.plugins = {
       },
     },
   },
+  beacon = { 'rainbowhxch/beacon.nvim', opts = { focus_gained = true } }
 }
 
 function M.setup()

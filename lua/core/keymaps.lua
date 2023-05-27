@@ -51,20 +51,6 @@ local M = {
         desc = "Delete current buffer" },
     },
 
-    -- moving lines
-    {
-      modes = "n",
-      key = "<A-j>",
-      action = function() vim.cmd.m(".+") end,
-      opts = {
-        desc = "Move line(s) up one line" },
-    },
-    {
-      modes = "n",
-      key = "<A-k>",
-      action = function() vim.cmd.m(".-2") end,
-      opts = { desc = "Move line(s) down one line" },
-    },
     { modes = "n", key = "<Leader><Leader>", action = vim.cmd.so, opts = { desc = "Source the current file" } },
   }
 }
