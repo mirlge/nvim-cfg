@@ -457,6 +457,11 @@ M.plugins = {
       },
     },
   },
+  {
+    "rest-nvim/rest.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {},
+  },
 }
 
 function M.setup()
