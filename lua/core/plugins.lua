@@ -444,7 +444,19 @@ M.plugins = {
       },
     },
   },
-  beacon = { 'rainbowhxch/beacon.nvim', opts = { focus_gained = true } }
+  beacon = { 'rainbowhxch/beacon.nvim', opts = { focus_gained = true } },
+  {
+    "NTBBloodbath/zig-tools.nvim",
+    ft = "zig",
+    opts = {},
+    dependencies = {
+      "akinsho/toggleterm.nvim",
+      {
+        "nvim-lua/plenary.nvim",
+        module_pattern = "plenary.*",
+      },
+    },
+  },
 }
 
 function M.setup()
