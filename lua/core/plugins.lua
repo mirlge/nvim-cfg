@@ -317,11 +317,21 @@ M.plugins = {
     "mfussenegger/nvim-dap",
     keys = {
       { "<Leader>db", function() require("dap").toggle_breakpoint() end, desc = "Toggle breakpoint" },
+      { "<Leader>dc", function() require("dap").continue() end,          desc = "Continue" },
     },
   },
   dap_ui = {
     "rcarriga/nvim-dap-ui",
     dependencies = { "mfussenegger/nvim-dap" },
+    opts = {},
+    keys = {
+      { "<Leader>di", function() require("dapui").toggle() end, desc = "Toggle UI" },
+    },
+  },
+  dap_virtual_text = {
+    "theHamsta/nvim-dap-virtual-text",
+    dependencies = { "mfussenegger/nvim-dap", "nvim-treesitter/nvim-treesitter" },
+    opts = {},
   },
   mason_dap = {
     "jay-babu/mason-nvim-dap.nvim",
@@ -459,7 +469,7 @@ M.plugins = {
     },
   },
   beacon = { 'rainbowhxch/beacon.nvim', opts = { focus_gained = true } },
-  {
+  zig_tools = {
     "NTBBloodbath/zig-tools.nvim",
     ft = "zig",
     opts = {},
@@ -471,10 +481,26 @@ M.plugins = {
       },
     },
   },
-  {
+  rest = {
     "rest-nvim/rest.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {},
+  },
+  dap_go = {
+    "leoluz/nvim-dap-go",
+    opts = {},
+  },
+  go = {
+    "ray-x/go.nvim",
+    dependencies = { -- optional packages
+      "ray-x/guihua.lua",
+      "neovim/nvim-lspconfig",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    opts = {},
+    event = { "CmdlineEnter" },
+    ft = { "go", 'gomod' },
+    build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
   },
 }
 
