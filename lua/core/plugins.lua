@@ -93,19 +93,19 @@ M.plugins = {
       },
     },
     keys = {
-      { "<Leader>ff", function() require("telescope.builtin").find_files() end, desc = "Find files" },
+      { "<Leader>fz", function() require("telescope.builtin").find_files() end, desc = "Find files" },
       { "<Leader>fg", function() require("telescope.builtin").live_grep() end,  desc = "Live grep" },
       { "<Leader>bf", function() require("telescope.builtin").buffers() end,    desc = "Find buffers" },
-      { "<Leader>hf", function() require("telescope.builtin").help_tags() end,  desc = "Find help tags" },
+      { "<Leader>hz", function() require("telescope.builtin").help_tags() end,  desc = "Find help tags" },
       {
-        "<Leader>gf",
+        "<Leader>gz",
         function() require("telescope.builtin").git_files() end,
         desc =
         "Find files in git tree"
       },
       { "<Leader>gb", function() require("telescope.builtin").git_branches() end, desc = "Find branches" },
       { "<Leader>gc", function() require("telescope.builtin").git_commits() end,  desc = "Inspect commits" },
-      { "<Leader>kf", function() require("telescope.builtin").keymaps() end,      desc = "Find keymaps" },
+      { "<Leader>kz", function() require("telescope.builtin").keymaps() end,      desc = "Find keymaps" },
       {
         "<Leader>bz",
         function() require("telescope.builtin").current_buffer_fuzzy_find() end,
@@ -229,7 +229,7 @@ M.plugins = {
     },
     keys = {
       {
-        "<Leader>pf",
+        "<Leader>pz",
         function() require("telescope").extensions.projects.projects {} end,
         desc = "Find projects",
       },
