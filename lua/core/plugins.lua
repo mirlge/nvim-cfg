@@ -502,6 +502,10 @@ M.plugins = {
     ft = { "go", 'gomod' },
     build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
   },
+  cheat_sh = {
+    "RishabhRD/nvim-cheat.sh",
+    dependencies = { "RishabhRD/popfix" },
+  },
 }
 
 function M.setup()
