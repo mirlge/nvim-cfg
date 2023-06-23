@@ -506,6 +506,13 @@ M.plugins = {
     "RishabhRD/nvim-cheat.sh",
     dependencies = { "RishabhRD/popfix" },
   },
+  neogen = {
+    "danymat/neogen",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+    opts = {},
+    -- Uncomment next line if you want to follow only stable versions
+    -- version = "*",
+  },
 }
 
 function M.setup()
