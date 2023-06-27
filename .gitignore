@@ -6,3 +6,6 @@ lazy-lock.json
 
 # local neoconf config
 .neoconf.json
+
+# copied config
+/init.lua
