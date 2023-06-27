@@ -24,3 +24,6 @@ require("mini.splitjoin").setup()
 
 -- mini.animate
 require("mini.animate").setup()
+
+-- mini.jump2d
+require('mini.jump2d').setup()
