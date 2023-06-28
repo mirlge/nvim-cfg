@@ -39,6 +39,22 @@ nvm install --lts
 npm install tree-sitter-cli
 ```
 
+### Installation
+
+1. Clone the repository
+   ```sh
+   git clone git@barbabok.barbanet.com:/srv/git/tor/nvim_cfg.git ~/.config/nvim
+   ```
+2. Copy the template `init.lua` (`init.lua.tpl`) to `init.lua`
+   ```sh
+   cd ~/.config/nvim
+   cp init.lua.tpl init.lua
+   ```
+3. Launch Neovim
+   ```sh
+   nvim
+   ```
+
 ## Keymaps
 
 Use `<Leader>kf` (default `<Leader>` is space) to see all keybinds.
