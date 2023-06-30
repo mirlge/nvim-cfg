@@ -535,6 +535,7 @@ local plugins = {
       },
     },
   },
+  dropbar = { 'Bekaboo/dropbar.nvim' },
 }
 
 return plugins
