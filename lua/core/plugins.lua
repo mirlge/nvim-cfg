@@ -1,6 +1,4 @@
-local M = {}
-
-M.plugins = {
+local plugins = {
   lazy = { 'folke/lazy.nvim' },
   treesitter = {
     "nvim-treesitter/nvim-treesitter",
@@ -515,52 +513,4 @@ M.plugins = {
   },
 }
 
-function M.setup()
-  local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-  if not vim.loop.fs_stat(lazypath) then
-    vim.fn.system({
-      "git",
-      "clone",
-      "--filter=blob:none",
-      "https://github.com/folke/lazy.nvim.git",
-      "--branch=stable", -- latest stable release
-      lazypath,
-    })
-  end
-  vim.opt.rtp:prepend(lazypath)
-
-  if M.plugins.lazy.enabled == false then
-    M.plugins.lazy.enabled = true
-  end
-  local plugins = {}
-  for _, v in pairs(M.plugins) do
-    table.insert(plugins, v)
-  end
-  require("lazy").setup(plugins)
-
-
-  -- More plugin configuration
-  if M.plugins.null_ls.enabled == nil or M.plugins.null_ls.enabled then
-    require("core.plugins.null-ls")
-  end
-  if M.plugins.norg.enabled == nil or M.plugins.norg.enabled then
-    require("core.plugins.norg")
-  end
-  if M.plugins.orgmode.enabled == nil or M.plugins.orgmode.enabled then
-    require("core.plugins.orgmode")
-  end
-  if M.plugins.project.enabled == nil or M.plugins.project.enabled then
-    require("core.plugins.project")
-  end
-  if M.plugins.neodev.enabled == nil or M.plugins.neodev.enabled then
-    require("core.plugins.neodev")
-  end
-  if M.plugins.which_key.enabled == nil or M.plugins.which_key.enabled then
-    require("core.plugins.which-key")
-  end
-  if M.plugins.lsp_zero.enabled == nil or M.plugins.lsp_zero.enabled then
-    require("core.plugins.lsp")
-  end
-end
-
-return M
+return plugins

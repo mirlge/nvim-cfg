@@ -5,8 +5,7 @@ M.helpers = require("core.helpers")
 local keymaps = require("core.keymaps")
 M.keymaps = keymaps.keymaps
 
-local plugins = require("core.plugins")
-M.plugins = plugins.plugins
+M.plugins = require("core.plugins")
 
 function M.setup()
   M.helpers.transparency()
@@ -15,7 +14,7 @@ function M.setup()
 
   keymaps.setup()
 
-  plugins.setup()
+  require("core.plugins.lazy")
 end
 
 return M
