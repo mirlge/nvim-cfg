@@ -517,6 +517,12 @@ local plugins = {
     opts = {},
     enabled = false,
   },
+  instant = {
+    "jbyuki/instant.nvim",
+    config = function()
+      require("core.plugins.instant")
+    end
+  },
 }
 
 return plugins
