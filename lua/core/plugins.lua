@@ -242,7 +242,7 @@ local plugins = {
     },
   },
   neogit = {
-    'TimUntersberger/neogit',
+    'NeogitOrg/neogit',
     dependencies = { 'nvim-lua/plenary.nvim' },
     opts = {},
     keys = {
