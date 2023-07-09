@@ -523,6 +523,18 @@ local plugins = {
       require("core.plugins.instant")
     end
   },
+  multicursors = {
+    "smoka7/multicursors.nvim",
+    event = "VeryLazy",
+    opts = {},
+    keys = {
+      {
+        '<Leader>m',
+        vim.cmd.MCstart,
+        desc = 'Create a selection for word under the cursor',
+      },
+    },
+  },
 }
 
 return plugins
