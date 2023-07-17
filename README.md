@@ -4,7 +4,7 @@
 
 ### Prerequisites
 
-- Neovim >= 0.9.0
+- Neovim >= 0.10
 - ripgrep
 - fd
 - [Node.js](https://nodejs.org/)
