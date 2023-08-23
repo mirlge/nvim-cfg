@@ -28,55 +28,6 @@ local plugins = {
     "nvim-treesitter/nvim-tree-docs",
     dependencies = "nvim-treesitter/nvim-treesitter",
   },
-  lsp_zero = {
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v2.x',
-    dependencies = {
-      -- LSP Support
-      'neovim/nvim-lspconfig', -- Required
-      {
-        -- Optional
-        'williamboman/mason.nvim',
-        build = function()
-          pcall(vim.cmd, 'MasonUpdate')
-        end,
-      },
-      { 'williamboman/mason-lspconfig.nvim' }, -- Optional
-
-      -- Autocompletion
-      {
-        'hrsh7th/nvim-cmp',
-        opts = {
-          preselect = 'item',
-          completion = {
-            completeopt = 'menu,menuone,noinsert'
-          },
-          sources = {
-            { name = "nvim_lsp" },
-            { name = "neorg" },
-            { name = "buffer" },
-            { name = "luasnip" },
-            { name = "path" },
-            { name = "orgmode" },
-            { name = "emoji" },
-            { name = "calc" },
-            { name = "git" },
-          },
-        },
-      },                          -- Required
-      { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-      { 'L3MON4D3/LuaSnip' },     -- Required
-      { 'saadparwaiz1/cmp_luasnip' },
-      { 'hrsh7th/cmp-path' },
-      { 'hrsh7th/cmp-buffer' },
-      { 'hrsh7th/cmp-emoji' },
-      { 'hrsh7th/cmp-calc' },
-      {
-        'petertriho/cmp-git',
-        opts = {},
-      },
-    },
-  },
   telescope = {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.1',
@@ -608,6 +559,70 @@ local plugins = {
       end, { noremap = false, expr = true })
     end,
   },
+  lspconfig = {
+    "neovim/nvim-lspconfig",
+  },
+  mason_lspconfig = {
+    "williamboman/mason-lspconfig.nvim",
+    dependencies = {
+      "williamboman/mason.nvim",
+      "neovim/nvim-lspconfig",
+    },
+    opts = {
+      ensure_installed = {
+        "pyright",
+        "rust_analyzer",
+        "tsserver",
+        "lua_ls",
+      },
+    },
+  },
+  mason = {
+    "williamboman/mason.nvim",
+    opts = {},
+  },
+  cmp = {
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      "neovim/nvim-lspconfig",
+      "nvim-orgmode/orgmode",
+      "epwalsh/obsidian.nvim",
+      "nvim-neorg/neorg",
+
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-cmdline",
+      "hrsh7th/cmp-emoji",
+      "hrsh7th/cmp-calc",
+      "petertriho/cmp-git",
+      "davidsierradz/cmp-conventionalcommits",
+      "hrsh7th/cmp-nvim-lua",
+
+      "L3MON4D3/LuaSnip",
+      "saadparwaiz1/cmp_luasnip",
+    },
+    config = function()
+      require("core.plugins.cmp")
+    end
+  },
+  cmp_git = {
+    "petertriho/cmp-git",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {},
+  },
+  luasnip = {
+    "L3MON4D3/LuaSnip",
+    dependencies = { "rafamadriz/friendly-snippets" },
+    -- follow latest release.
+    version = "2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+    -- install jsregexp (optional!).
+    build = "make install_jsregexp",
+    config = function()
+      require("core.plugins.luasnip")
+    end,
+  },
+  friendly_snippets = { "rafamadriz/friendly-snippets" },
 }
 
 return plugins
