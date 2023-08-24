@@ -1,4 +1,5 @@
 local cmp = require("cmp")
+local luasnip = require("luasnip")
 
 cmp.setup({
   preselect = 'item',
@@ -27,5 +28,19 @@ cmp.setup({
   },
   mapping = cmp.mapping.preset.insert({
     ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+    ['<C-f>'] = cmp.mapping(function (fallback)
+      if luasnip.jumpable(1) then
+        luasnip.jump(1)
+      else
+        fallback()
+      end
+    end, {"i", "s"}),
+    ['<C-b>'] = cmp.mapping(function (fallback)
+      if luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, {"i", "s"}),
   }),
 })
