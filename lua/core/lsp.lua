@@ -6,7 +6,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
-vim.api.nvim_create_autocmd('BufWritePost', {
+vim.api.nvim_create_autocmd('BufWritePre', {
   desc = 'Format buffer',
-  callback = vim.lsp.buf.format,
+  callback = function ()
+    vim.lsp.buf.format()
+  end,
 })
