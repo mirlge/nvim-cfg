@@ -554,6 +554,7 @@ local plugins = {
         "rust_analyzer",
         "tsserver",
         "lua_ls",
+        "gopls",
       },
     },
   },
