@@ -4,7 +4,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set("n", "<Leader>lf", vim.lsp.buf.format, { desc = "Format the current buffer" })
     vim.keymap.set("n", "<Leader>lca", vim.lsp.buf.code_action, { desc = "Code action" })
 
-    vim.keymap.set("n", "K", vim.lsp.buf.hover(), { desc = "LSP hover" })
+    vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "LSP hover" })
   end,
 })
 
