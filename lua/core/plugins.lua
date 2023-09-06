@@ -290,9 +290,13 @@ local plugins = {
     build = ":Neorg sync-parsers",
     opts = {
       load = {
-        ["core.defaults"] = {},  -- Loads default behaviour
-        ["core.concealer"] = {}, -- Adds pretty icons to your documents
-        ["core.dirman"] = {      -- Manages Neorg workspaces
+        ["core.defaults"] = {}, -- Loads default behaviour
+        ["core.concealer"] = {  -- Adds pretty icons to your documents
+          config = {
+            folds = false,
+          },
+        },
+        ["core.dirman"] = { -- Manages Neorg workspaces
           config = {
             workspaces = {
               notes = "~/Nextcloud/norg/notes",
