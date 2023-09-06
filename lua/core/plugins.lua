@@ -297,6 +297,7 @@ local plugins = {
             workspaces = {
               notes = "~/Nextcloud/norg/notes",
             },
+            default_workspace = "notes",
           },
         },
         ["core.integrations.treesitter"] = {},
