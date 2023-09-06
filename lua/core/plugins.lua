@@ -311,6 +311,7 @@ local plugins = {
             zen_mode = "zen-mode",
           }
         },
+        ["core.summary"] = {},
       },
     },
     dependencies = { { "nvim-lua/plenary.nvim" } },
