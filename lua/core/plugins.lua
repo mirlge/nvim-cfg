@@ -285,7 +285,7 @@ local plugins = {
     },
     opts = {},
   },
-  norg = {
+  neorg = {
     "nvim-neorg/neorg",
     build = ":Neorg sync-parsers",
     opts = {
