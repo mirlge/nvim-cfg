@@ -316,6 +316,11 @@ local plugins = {
           }
         },
         ["core.summary"] = {},
+        ["core.keybinds"] = {
+          config = {
+            neorg_leader = "<LocalLeader>o"
+          },
+        },
       },
     },
     dependencies = { { "nvim-lua/plenary.nvim" } },
