@@ -318,7 +318,7 @@ local plugins = {
         ["core.summary"] = {},
         ["core.keybinds"] = {
           config = {
-            neorg_leader = "<LocalLeader>o"
+            neorg_leader = "<Leader>o"
           },
         },
       },
