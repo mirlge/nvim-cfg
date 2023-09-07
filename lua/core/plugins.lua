@@ -290,13 +290,18 @@ local plugins = {
     build = ":Neorg sync-parsers",
     opts = {
       load = {
-        ["core.defaults"] = {},  -- Loads default behaviour
-        ["core.concealer"] = {}, -- Adds pretty icons to your documents
-        ["core.dirman"] = {      -- Manages Neorg workspaces
+        ["core.defaults"] = {}, -- Loads default behaviour
+        ["core.concealer"] = {  -- Adds pretty icons to your documents
+          config = {
+            folds = false,
+          },
+        },
+        ["core.dirman"] = { -- Manages Neorg workspaces
           config = {
             workspaces = {
               notes = "~/Nextcloud/norg/notes",
             },
+            default_workspace = "notes",
           },
         },
         ["core.integrations.treesitter"] = {},
@@ -309,6 +314,12 @@ local plugins = {
           config = {
             zen_mode = "zen-mode",
           }
+        },
+        ["core.summary"] = {},
+        ["core.keybinds"] = {
+          config = {
+            neorg_leader = "<Leader>o"
+          },
         },
       },
     },
@@ -607,6 +618,36 @@ local plugins = {
     end,
   },
   friendly_snippets = { "rafamadriz/friendly-snippets" },
+  dressing = {
+    "stevearc/dressing.nvim",
+    opts = {},
+  },
+  flash = {
+    "folke/flash.nvim",
+    event = "VeryLazy",
+    ---@type Flash.Config
+    opts = {},
+    -- stylua: ignore
+    keys = {
+      { "s", mode = { "n", "o", "x" }, function() require("flash").jump() end,       desc = "Flash" },
+      { "S", mode = { "n", "o", "x" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+      { "r", mode = "o",               function() require("flash").remote() end,     desc = "Remote Flash" },
+      {
+        "R",
+        mode = { "o", "x" },
+        function() require("flash").treesitter_search() end,
+        desc =
+        "Treesitter Search"
+      },
+      {
+        "<c-s>",
+        mode = { "c" },
+        function() require("flash").toggle() end,
+        desc =
+        "Toggle Flash Search"
+      },
+    },
+  },
 }
 
 return plugins
