@@ -618,6 +618,10 @@ local plugins = {
     end,
   },
   friendly_snippets = { "rafamadriz/friendly-snippets" },
+  dressing = {
+    "stevearc/dressing.nvim",
+    opts = {},
+  },
 }
 
 return plugins
