@@ -6,7 +6,6 @@ require("mini.pairs").setup()
 
 require("mini.starter").setup()
 
-require("mini.jump").setup()
 require('mini.jump2d').setup()
 
 require("mini.cursorword").setup()
