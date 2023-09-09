@@ -321,6 +321,7 @@ local plugins = {
             neorg_leader = "<Leader>o"
           },
         },
+        ["core.ui.calendar"] = {},
       },
     },
     dependencies = { { "nvim-lua/plenary.nvim" } },
