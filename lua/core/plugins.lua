@@ -760,6 +760,9 @@ local plugins = {
       },
     },
   },
+  rainbow_delimiters = {
+    "HiPhish/rainbow-delimiters.nvim",
+  },
 }
 
 return plugins
