@@ -688,6 +688,28 @@ local plugins = {
     end,
   },
   friendly_snippets = { "rafamadriz/friendly-snippets" },
+  dbee = {
+    "kndndrj/nvim-dbee",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+    },
+    build = function()
+      -- Install tries to automatically detect the install method.
+      -- if it fails, try calling it with one of these parameters:
+      --    "curl", "wget", "bitsadmin", "go"
+      require("dbee").install()
+    end,
+    opts = { --[[optional config]] },
+    keys = {
+      {
+        "<Leader>qi",
+        function()
+          require("dbee").toggle()
+        end,
+        desc = "Toggle DBee UI",
+      },
+    },
+    },
   dressing = {
     "stevearc/dressing.nvim",
     opts = {},
@@ -717,6 +739,35 @@ local plugins = {
         "Toggle Flash Search"
       },
     },
+  },
+  ultimate_autopair = {
+    'altermo/ultimate-autopair.nvim',
+    event = { 'InsertEnter', 'CmdlineEnter' },
+    branch = 'v0.6',
+    opts = {
+      -- Config goes here
+    },
+    enabled = false,
+  },
+  activate = {
+    "roobert/activate.nvim",
+    keys = {
+      {
+        "<leader>P",
+        function()
+          require("activate").list_plugins()
+        end,
+        desc = "Plugins",
+      },
+    },
+  },
+  rainbow_delimiters = {
+    "HiPhish/rainbow-delimiters.nvim",
+  },
+  visual = {
+    '00sapo/visual.nvim',
+    event = "VeryLazy", -- this is for making sure our keymaps are applied after the others: we call the previous mapppings, but other plugins/configs usually not!
+    opts = {},
   },
 }
 

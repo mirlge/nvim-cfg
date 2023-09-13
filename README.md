@@ -19,12 +19,7 @@ brew install neovim ripgrep fd
 
 #### Installation of Node.js
 
-##### Via [Node Version Manager](https://nvm.sh/) (recommended)
-
-```sh
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
-nvm install --lts
-```
+Via [Node Version Manager](https://nvm.sh/) (recommended)
 
 #### Installation of JetBrains Mono on Linux and macOS
 
