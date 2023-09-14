@@ -387,7 +387,14 @@ local plugins = {
         ["core.summary"] = {},
         ["core.keybinds"] = {
           config = {
-            neorg_leader = "<Leader>o"
+            neorg_leader = "<Leader>o",
+            hook = function(keybinds)
+              keybinds.map("norg", "n", "<Leader>om",
+                function() vim.cmd.Neorg("keybind", "norg", "core.looking-glass.magnify-code-block") end,
+                { desc = "Magnify code block" })
+              keybinds.map("norg", "n", "<Leader>ot", function() vim.cmd.Neorg("tangle", "current-file") end,
+                { desc = "Tangle current file" })
+            end,
           },
         },
       },
@@ -708,7 +715,7 @@ local plugins = {
         desc = "Toggle DBee UI",
       },
     },
-    },
+  },
   dressing = {
     "stevearc/dressing.nvim",
     opts = {},
@@ -746,7 +753,6 @@ local plugins = {
     opts = {
       -- Config goes here
     },
-    enabled = false,
   },
   activate = {
     "roobert/activate.nvim",
