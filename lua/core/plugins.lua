@@ -708,7 +708,7 @@ local plugins = {
         desc = "Toggle DBee UI",
       },
     },
-    },
+  },
   dressing = {
     "stevearc/dressing.nvim",
     opts = {},
@@ -746,7 +746,6 @@ local plugins = {
     opts = {
       -- Config goes here
     },
-    enabled = false,
   },
   activate = {
     "roobert/activate.nvim",
