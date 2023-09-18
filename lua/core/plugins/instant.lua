@@ -1,1 +1,6 @@
-vim.g.instant_username = "MineItRiGrEight"
+return {
+  "jbyuki/instant.nvim",
+  config = function()
+    vim.g.instant_username = "MineItRiGrEight"
+  end
+}

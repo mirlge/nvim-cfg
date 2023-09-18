@@ -14,8 +14,7 @@ function M.setup()
 
   keymaps.setup()
 
-  require("core.plugins.lazy")
-  require("core.plugins.after")
+  require("core.lazy")
 
   require("core.lsp")
 end
