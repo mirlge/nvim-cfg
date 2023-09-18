@@ -33,3 +33,5 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 
 vim.o.scrolloff = 8
+
+vim.o.guifont = "JetBrainsMono Nerd Font Mono:h13"
