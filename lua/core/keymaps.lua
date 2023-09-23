@@ -2,19 +2,19 @@ local M = {
   keymaps = {
     --- system clipboard
     -- yank
-    { modes = { "n", "v" }, key = "<Leader>y", opts = { desc = "y, but to system clipboard" }, action = "\"+y" },
-    { modes = { "n", "v" }, key = "<Leader>Y", opts = { desc = "Y, but to system clipboard" }, action = "\"+Y" },
+    { modes = { "n", "x" }, key = "<Leader>y", opts = { desc = "y, but to system clipboard" }, action = "\"+y" },
+    { modes = { "n", "x" }, key = "<Leader>Y", opts = { desc = "Y, but to system clipboard" }, action = "\"+Y" },
 
     -- paste
     {
-      modes = { "n", "v" },
+      modes = { "n", "x" },
       key = "<Leader>p",
       action = "\"+p",
       opts = {
         desc = "p, but from system clipboard" }
     },
     {
-      modes = { "n", "v" },
+      modes = { "n", "x" },
       key = "<Leader>P",
       action = "\"+P",
       opts = {
