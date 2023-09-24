@@ -1,4 +1,7 @@
 return {
-  "williamboman/mason.nvim",
-  opts = {},
+  {
+    "williamboman/mason.nvim",
+    opts = {},
+  },
+  { import = "core.plugins.mason" },
 }
