@@ -1,2 +1,2 @@
 dependencies:
-  neovim.io: ~0.9
+  neovim.io: 0.9.*
