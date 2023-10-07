@@ -8,8 +8,6 @@ return {
 
     require("mini.starter").setup()
 
-    require('mini.jump2d').setup()
-
     require("mini.cursorword").setup()
 
     require("mini.comment").setup({
