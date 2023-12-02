@@ -6,7 +6,7 @@ return {
   main = "nvim-treesitter.configs",
   opts = {
     -- A list of parser names, or "all" (the five listed parsers should always be installed)
-    ensure_installed = { "rust", "c", "lua", "vim", "vimdoc", "query", "org", "http", "json" },
+    ensure_installed = { "rust", "c", "lua", "vim", "vimdoc", "query", "org", "http", "json", "regex" },
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = false,
