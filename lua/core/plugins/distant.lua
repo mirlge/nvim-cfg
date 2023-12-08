@@ -14,4 +14,5 @@ return {
     -- 3. Provides keybinding to jump into a remote file's parent directory
     --['*'] = require('distant.settings').chip_default()
   },
+  enabled = false, -- distant.nvim can't download a compatible distant build
 }
