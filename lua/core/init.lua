@@ -7,14 +7,23 @@ M.keymaps = keymaps.keymaps
 
 M.plugins = require("core.plugins")
 
-function M.setup()
+function M.setup(opts)
+  local opts = opts or {}
+
   M.helpers.transparency()
+
+  if opts.standalone then
+    vim.g.mapleader = " "
+    vim.g.maplocalleader = ","
+  end
 
   require("core.set")
 
   keymaps.setup()
 
-  require("core.lazy")
+  if opts.standalone then
+    require("core.lazy")
+  end
 
   require("core.lsp")
 end

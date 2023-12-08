@@ -1,3 +1,3 @@
 local core = require("core")
 -- Do your configuration here
-core.setup()
+core.setup({ standalone = true })
