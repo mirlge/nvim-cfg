@@ -1,3 +1,4 @@
 return {
-  "folke/lazy.nvim"
+  "folke/lazy.nvim",
+  { import = "plugins" },
 }
