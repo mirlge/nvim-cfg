@@ -40,7 +40,7 @@ npm install tree-sitter-cli
 
 1. Clone the repository
    ```sh
-   git clone https://codeberg.org/mirge/nvim-cfg ~/.config/nvim
+   git clone https://codeberg.org/mirge/nvim-cfg.git ~/.config/nvim
    ```
 2. Copy the template `init.lua` (`init.lua.tpl`) to `init.lua`
    ```sh
