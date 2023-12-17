@@ -36,6 +36,8 @@ npm install tree-sitter-cli
 
 ### Installation
 
+#### Standalone (to `$XDG_CONFIG_HOME/nvim`, as a normal Neovim config)
+
 1. Clone the repository
    ```sh
    git clone git@barbabok.barbanet.com:/srv/git/tor/nvim_cfg.git ~/.config/nvim
