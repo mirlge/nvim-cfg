@@ -10,14 +10,11 @@ M.plugins = require("core.plugins")
 function M.setup(opts)
   local opts = opts or {}
 
-  M.helpers.transparency()
-
   if opts.standalone then
-    vim.g.mapleader = " "
-    vim.g.maplocalleader = ","
-  end
+    M.helpers.transparency()
 
-  require("core.set")
+    require("core.set")
+  end
 
   keymaps.setup()
 
