@@ -4,5 +4,7 @@ return {
     "williamboman/mason.nvim",
     "mfussenegger/nvim-dap",
   },
-  opts = {},
+  opts = {
+    handlers = {},
+  },
 }
