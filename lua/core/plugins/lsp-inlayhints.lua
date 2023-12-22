@@ -3,5 +3,6 @@ return {
   dependencies = {
     "neovim/nvim-lspconfig",
   },
+  event = "LspAttach",
   opts = {},
 }
