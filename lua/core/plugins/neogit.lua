@@ -5,13 +5,13 @@ return {
     "sindrets/diffview.nvim",
     "nvim-telescope/telescope.nvim",
   },
-  opts = {},
+  opts = { kind = "split" },
   cmd = "Neogit",
   keys = {
     {
       "<Leader>gs",
       function()
-        require("neogit").open({ kind = "split" })
+        require("neogit").open()
       end,
       desc = "Open Neogit",
     },
