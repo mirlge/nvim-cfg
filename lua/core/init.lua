@@ -18,11 +18,11 @@ function M.setup(opts)
 
   keymaps.setup()
 
+  require("core.lsp")
+
   if opts.standalone then
     require("core.lazy")
   end
-
-  require("core.lsp")
 end
 
 return M
