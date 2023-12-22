@@ -9,11 +9,12 @@ return {
 
     main.setup(opts)
 
-    main.setup_handlers {
+    main.setup_handlers({
       function(server_name)
-        require("lspconfig")[server_name].setup {}
+        require("lspconfig")[server_name].setup({})
       end,
-    }
+      ["rust_analyzer"] = function() end,
+    })
   end,
   opts = {
     ensure_installed = {
