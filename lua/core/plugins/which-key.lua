@@ -21,13 +21,16 @@ return {
       k = { name = "Keymap" },
       l = {
         name = "LSP",
-        c = { name = "Code" }
+        c = { name = "Code" },
       },
-      d = { name = "DAP" },
+      d = {
+        name = "DAP",
+        s = "Step",
+      },
       o = {
         name = "(Ne)org",
         i = { name = "org insert" },
-        x = { name = "org clock" }
+        x = { name = "org clock" },
       },
       s = { name = "Session" },
       q = { name = "DB" },
