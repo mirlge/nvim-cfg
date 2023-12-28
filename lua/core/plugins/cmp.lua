@@ -22,15 +22,17 @@ return {
 
       "L3MON4D3/LuaSnip",
       "saadparwaiz1/cmp_luasnip",
+
+      "rcarriga/cmp-dap",
     },
     config = function()
       local cmp = require("cmp")
       local luasnip = require("luasnip")
 
       cmp.setup({
-        preselect = 'item',
+        preselect = "item",
         completion = {
-          completeopt = 'menu,menuone,noinsert',
+          completeopt = "menu,menuone,noinsert",
         },
         sources = {
           { name = "nvim_lsp" },
@@ -46,23 +48,24 @@ return {
           { name = "git" },
           { name = "conventionalcommits" },
           { name = "obsidian.nvim" },
-          { name = 'nvim_lsp_signature_help' },
+          { name = "nvim_lsp_signature_help" },
+          { name = "dap" },
         },
         snippet = {
           expand = function(args)
             require("luasnip").lsp_expand(args.body)
-          end
+          end,
         },
         mapping = cmp.mapping.preset.insert({
-          ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-          ['<C-f>'] = cmp.mapping(function(fallback)
+          ["<C-y>"] = cmp.mapping.confirm({ select = true }),
+          ["<C-f>"] = cmp.mapping(function(fallback)
             if luasnip.jumpable(1) then
               luasnip.jump(1)
             else
               fallback()
             end
           end, { "i", "s" }),
-          ['<C-b>'] = cmp.mapping(function(fallback)
+          ["<C-b>"] = cmp.mapping(function(fallback)
             if luasnip.jumpable(-1) then
               luasnip.jump(-1)
             else
@@ -72,14 +75,14 @@ return {
         }),
       })
 
-      require 'cmp'.setup.cmdline('/', {
+      require("cmp").setup.cmdline("/", {
         sources = cmp.config.sources({
-          { name = 'nvim_lsp_document_symbol' },
+          { name = "nvim_lsp_document_symbol" },
         }, {
-          { name = 'buffer' },
-        })
+          { name = "buffer" },
+        }),
       })
-    end
+    end,
   },
   { import = "core.plugins.cmp" },
 }
