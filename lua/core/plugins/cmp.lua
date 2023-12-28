@@ -49,7 +49,6 @@ return {
           { name = "conventionalcommits" },
           { name = "obsidian.nvim" },
           { name = "nvim_lsp_signature_help" },
-          { name = "dap" },
         },
         snippet = {
           expand = function(args)
@@ -81,6 +80,12 @@ return {
         }, {
           { name = "buffer" },
         }),
+      })
+
+      require("cmp").setup.filetype({ "dap-repl", "dapui_watches", "dapui_hover" }, {
+        sources = {
+          { name = "dap" },
+        },
       })
     end,
   },
