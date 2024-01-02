@@ -6,6 +6,16 @@ return {
     "nvim-treesitter/nvim-treesitter",
     "nvim-tree/nvim-web-devicons",
   },
+  config = function(_, opts)
+    require("telescope").setup(opts)
+
+    local telescope_border = vim.api.nvim_get_hl(0, { name = "TelescopeBorder" })
+    vim.api.nvim_set_hl(
+      0,
+      "TelescopeBorder",
+      vim.tbl_extend("force", telescope_border, { fg = telescope_border.bg })
+    )
+  end,
   opts = {
     defaults = {
       mappings = {
