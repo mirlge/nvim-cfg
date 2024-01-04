@@ -17,7 +17,7 @@ return {
         desc = "Continue",
       },
       {
-        "<Leader>d<BS>",
+        "<Leader>dS",
         function()
           require("dap").close()
         end,
