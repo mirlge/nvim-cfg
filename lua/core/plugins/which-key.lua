@@ -16,6 +16,7 @@ return {
       },
       b = { name = "Buffer" },
       t = { name = "Neorg TODO" },
+      T = { name = "Trouble" },
       h = { name = "Help" },
       g = { name = "Git" },
       k = { name = "Keymap" },
