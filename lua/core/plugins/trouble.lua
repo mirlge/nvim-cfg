@@ -8,7 +8,7 @@ return {
   },
   keys = {
     {
-      "<Leader>lt",
+      "<Leader>Tt",
       function()
         require("trouble").toggle()
       end,
