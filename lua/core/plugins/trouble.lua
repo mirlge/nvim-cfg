@@ -15,6 +15,20 @@ return {
       desc = "Toggle Trouble",
     },
     {
+      "<Leader>Tq",
+      function()
+        require("trouble").toggle("quickfix")
+      end,
+      desc = "Toggle Trouble in quickfix mode",
+    },
+    {
+      "gR",
+      function()
+        require("trouble").toggle("lsp_references")
+      end,
+      desc = "LSP references",
+    },
+    {
       "<Leader>Tn",
       function()
         require("trouble").next({ skip_groups = true, jump = true })
