@@ -9,9 +9,16 @@ return {
 
     main.setup(opts)
 
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    capabilities.textDocument.foldingRange = {
+      dynamicRegistration = false,
+      lineFoldingOnly = true,
+    }
     main.setup_handlers({
       function(server_name)
-        require("lspconfig")[server_name].setup({})
+        require("lspconfig")[server_name].setup({
+          capabilities = capabilities,
+        })
       end,
       ["rust_analyzer"] = function() end,
     })
