@@ -13,5 +13,33 @@ return {
       end,
       desc = "Generate documentation",
     },
+    {
+      "<Leader>fdf",
+      function()
+        require("neogen").generate({ type = "func" })
+      end,
+      desc = "Generate documentation for function",
+    },
+    {
+      "<Leader>fdc",
+      function()
+        require("neogen").generate({ type = "class" })
+      end,
+      desc = "Generate documentation for class",
+    },
+    {
+      "<Leader>fdt",
+      function()
+        require("neogen").generate({ type = "type" })
+      end,
+      desc = "Generate documentation for type",
+    },
+    {
+      "<Leader>fdF",
+      function()
+        require("neogen").generate({ type = "file" })
+      end,
+      desc = "Generate documentation for file",
+    },
   },
 }
