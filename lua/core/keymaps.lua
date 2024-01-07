@@ -1,64 +1,71 @@
 local M = {
+  defaults = {
+    mode = "n",
+    opts = {},
+  },
   keymaps = {
     --- system clipboard
     -- yank
-    { modes = { "n", "x" }, key = "<Leader>y", opts = { desc = "y, but to system clipboard" }, action = "\"+y" },
-    { modes = { "n", "x" }, key = "<Leader>Y", opts = { desc = "Y, but to system clipboard" }, action = "\"+Y" },
+    { "<Leader>y", '"+y', mode = { "n", "x" }, opts = { desc = "y, but to system clipboard" } },
+    { "<Leader>Y", '"+Y', mode = { "n", "x" }, opts = { desc = "Y, but to system clipboard" } },
 
     -- paste
     {
-      modes = { "n", "x" },
-      key = "<Leader>p",
-      action = "\"+p",
+      "<Leader>p",
+      '"+p',
+      mode = { "n", "x" },
       opts = {
-        desc = "p, but from system clipboard" }
+        desc = "p, but from system clipboard",
+      },
     },
     {
-      modes = { "n", "x" },
-      key = "<Leader>P",
-      action = "\"+P",
+      "<Leader>P",
+      '"+P',
+      mode = { "n", "x" },
       opts = {
-        desc = "P, but from system clipboard" },
+        desc = "P, but from system clipboard",
+      },
     },
     {
-      modes = "x",
-      key = "<Leader>p",
-      action = [["_dP]],
+      "<Leader>p",
+      [["_dP]],
+      mode = "x",
       opts = { desc = "Replace with yanked text without overwriting it" },
     },
 
-
     -- buffers
     {
-      modes = "n",
-      key = "<Leader>b<Tab>",
-      action = vim.cmd.bnext,
+      "<Leader>bn",
+      vim.cmd.bnext,
       opts = {
-        desc = "Go to next buffer" },
+        desc = "Go to next buffer",
+      },
     },
     {
-      modes = "n",
-      key = "<Leader>b<S-Tab>",
-      action = vim.cmd.bprev,
+      "<Leader>bp",
+      vim.cmd.bprev,
       opts = {
-        desc = "Go to previous buffer" },
+        desc = "Go to previous buffer",
+      },
     },
     {
-      modes = "n",
-      key = "<Leader>bd",
-      action = vim.cmd.bdelete,
+      "<Leader>bd",
+      vim.cmd.bdelete,
       opts = {
-        desc = "Delete current buffer" },
+        desc = "Delete current buffer",
+      },
     },
 
-    { modes = "n", key = "<Leader><Leader>", action = vim.cmd.so, opts = { desc = "Source the current file" } },
-  }
+    { "<Leader><Leader>", vim.cmd.so, opts = { desc = "Source the current file" } },
+  },
 }
 
-function M.setup()
-  for i = 1, #M.keymaps do
-    local keymap = M.keymaps[i]
-    vim.keymap.set(keymap.modes, keymap.key, keymap.action, keymap.opts or {})
+function M.setup(keymap_defaults)
+  local keymap_defaults = vim.tbl_extend("force", M.defaults, keymap_defaults or {})
+
+  for _, keymap in ipairs(M.keymaps) do
+    local keymap = vim.tbl_extend("force", keymap_defaults, keymap)
+    vim.keymap.set(keymap.mode, keymap[1], keymap[2], keymap.opts)
   end
 end
 
