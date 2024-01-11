@@ -1,7 +1,6 @@
 local M = {
   defaults = {
     mode = "n",
-    opts = {},
   },
   keymaps = {
     --- system clipboard
