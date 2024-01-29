@@ -44,7 +44,6 @@ return {
           { name = "orgmode" },
           { name = "buffer" },
           { name = "path" },
-          { name = "cmdline" },
           { name = "luasnip" },
           { name = "emoji" },
           { name = "calc" },
@@ -98,6 +97,21 @@ return {
         }, {
           { name = "buffer" },
         }),
+      })
+
+      -- `:` cmdline setup.
+      cmp.setup.cmdline(':', {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources({
+          { name = 'path' }
+        }, {
+          {
+            name = 'cmdline',
+            option = {
+              ignore_cmds = { 'Man', '!' }
+            }
+          }
+        })
       })
 
       require("cmp").setup.filetype({ "dap-repl", "dapui_watches", "dapui_hover" }, {
