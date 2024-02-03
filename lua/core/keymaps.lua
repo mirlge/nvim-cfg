@@ -47,13 +47,6 @@ local M = {
         desc = "Go to previous buffer",
       },
     },
-    {
-      "<Leader>bd",
-      vim.cmd.bdelete,
-      opts = {
-        desc = "Delete current buffer",
-      },
-    },
 
     { "<Leader><Leader>", vim.cmd.so, opts = { desc = "Source the current file" } },
   },
