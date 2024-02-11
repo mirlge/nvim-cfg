@@ -28,7 +28,7 @@ return {
       function()
         require("ufo").closeAllFolds()
       end,
-      desc = "Open all folds",
+      desc = "Close all folds",
     },
   },
 }
