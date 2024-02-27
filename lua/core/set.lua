@@ -4,34 +4,34 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
-vim.o.rnu = true
-vim.o.nu = true
+vim.opt.rnu = true
+vim.opt.nu = true
 
-vim.o.hlsearch = false
-vim.o.incsearch = true
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
 
-vim.o.termguicolors = true
+vim.opt.termguicolors = true
 
-vim.o.tabstop = 2
-vim.o.shiftwidth = 0
-vim.o.softtabstop = -1
-vim.o.expandtab = true
-vim.o.smartindent = true
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 0
+vim.opt.softtabstop = -1
+vim.opt.expandtab = true
+vim.opt.smartindent = true
 
-vim.o.swapfile = false
-vim.o.backup = false
-vim.o.undodir = os.getenv("HOME") .. "/.vim/undodir"
-vim.o.undofile = true
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undofile = true
 
-vim.o.updatetime = 50
+vim.opt.updatetime = 50
 
---vim.o.colorcolumn = "-5"
+--vim.opt.colorcolumn = "-5"
 
-vim.o.mouse = "a"
+vim.opt.mouse = "a"
 
-vim.o.ignorecase = true
-vim.o.smartcase = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
-vim.o.scrolloff = 8
+vim.opt.scrolloff = 8
 
-vim.o.guifont = "JetBrainsMono Nerd Font Mono:h13"
+vim.opt.guifont = "JetBrainsMono Nerd Font Mono:h13"
