@@ -32,22 +32,6 @@ local M = {
       opts = { desc = "Replace with yanked text without overwriting it" },
     },
 
-    -- buffers
-    {
-      "<Leader>bn",
-      vim.cmd.bnext,
-      opts = {
-        desc = "Go to next buffer",
-      },
-    },
-    {
-      "<Leader>bp",
-      vim.cmd.bprev,
-      opts = {
-        desc = "Go to previous buffer",
-      },
-    },
-
     { "<Leader><Leader>", vim.cmd.so, opts = { desc = "Source the current file" } },
   },
 }
