@@ -58,6 +58,8 @@ npm install tree-sitter-cli
 
 Use `<Leader>kf` (default `<Leader>` is space) to see all keybinds.
 
+**Note**: This Neovim config uses [kak.nvim](https://codeberg.org/mirge/kak.nvim), so it has Kakoune-like keybinds.
+
 ## Some of the commands added
 
 ### Install a language server
