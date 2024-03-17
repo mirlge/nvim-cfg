@@ -52,6 +52,8 @@ npm install tree-sitter-cli
    nvim
    ```
 
+4. Exit Neovim
+
 ## Keymaps
 
 Use `<Leader>kf` (default `<Leader>` is space) to see all keybinds.
