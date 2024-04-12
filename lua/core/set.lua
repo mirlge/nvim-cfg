@@ -37,3 +37,10 @@ vim.opt.scrolloff = 8
 vim.opt.guifont = "JetBrainsMono Nerd Font Mono:h13"
 
 vim.opt.signcolumn = "yes"
+
+vim.opt.list = true
+vim.opt.listchars = {
+  tab = "» ",
+  trail = "·",
+  nbsp = "␣",
+}
