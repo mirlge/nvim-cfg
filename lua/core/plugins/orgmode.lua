@@ -2,8 +2,8 @@ return {
   'nvim-orgmode/orgmode',
   dependencies = { 'nvim-treesitter/nvim-treesitter' },
   event = "VeryLazy",
+  ft = { "org" },
   config = function(_, opts)
-    require("orgmode").setup_ts_grammar()
     require("orgmode").setup(opts)
   end,
   opts = {

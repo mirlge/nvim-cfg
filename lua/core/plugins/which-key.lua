@@ -12,17 +12,17 @@ return {
     wk.register({
       f = {
         name = "File",
-        h = { name = "Harpoon" },
+        h = "Harpoon",
       },
-      b = { name = "Buffer" },
-      t = { name = "Neorg TODO" },
-      T = { name = "Trouble" },
-      h = { name = "Help" },
-      g = { name = "Git" },
-      k = { name = "Keymap" },
+      b = "Buffer",
+      t = "Neorg TODO",
+      T = "Trouble",
+      h = "Help",
+      g = "Git",
+      k = "Keymap",
       l = {
         name = "LSP",
-        c = { name = "Code" },
+        c = "Code",
       },
       d = {
         name = "DAP",
@@ -30,12 +30,12 @@ return {
       },
       o = {
         name = "(Ne)org",
-        i = { name = "org insert" },
-        x = { name = "org clock" },
+        i = "org insert",
+        x = "org clock",
       },
-      s = { name = "Session" },
-      q = { name = "DB" },
-      S = { name = "Flash" },
+      s = "Session",
+      q = "DB",
+      S = "Flash",
     }, { prefix = "<Leader>" })
 
     wk.register({

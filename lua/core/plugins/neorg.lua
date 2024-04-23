@@ -1,7 +1,6 @@
 return {
   "nvim-neorg/neorg",
-  dependencies = { "nvim-lua/plenary.nvim" },
-  build = function() vim.cmd.Neorg("sync-parsers") end,
+  dependencies = { "luarocks.nvim" },
   opts = {
     load = {
       ["core.defaults"] = {}, -- Loads default behaviour
