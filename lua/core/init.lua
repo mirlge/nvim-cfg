@@ -13,7 +13,7 @@ function M.setup(opts)
   if opts.standalone then
     M.helpers.transparency()
 
-    require("core.set")
+    require("core.options")
   end
 
   keymaps.setup()
