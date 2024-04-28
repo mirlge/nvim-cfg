@@ -6,6 +6,11 @@ return {
     vim.o.timeoutlen = 300
   end,
   config = function(_, opts)
+    local wk_presets = require("which-key.plugins.presets")
+    wk_presets.operators.c = nil
+    wk_presets.operators.d = nil
+    wk_presets.operators.y = nil
+
     local wk = require("which-key")
     wk.setup(opts)
 
