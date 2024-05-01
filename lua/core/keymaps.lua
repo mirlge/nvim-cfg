@@ -32,7 +32,9 @@ local M = {
       opts = { desc = "Replace with yanked text without overwriting it" },
     },
 
-    { "<Leader><Leader>", vim.cmd.so, opts = { desc = "Source the current file" } },
+    { "<Leader><Leader>", vim.cmd.so,                                                opts = { desc = "Source the current file" } },
+
+    { "<Leader>fn",       function() vim.cmd.drop("~/Nextcloud/notes/index.md") end, opts = { desc = "Open notes index" } },
   },
 }
 
