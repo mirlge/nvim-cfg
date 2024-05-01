@@ -25,7 +25,7 @@ return {
   end,
   opts = {
     ensure_installed = {
-      "pyright",
+      "basedpyright",
       "rust_analyzer",
       "tsserver",
       "lua_ls",
