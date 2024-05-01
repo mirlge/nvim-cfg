@@ -18,6 +18,8 @@ return {
       f = {
         name = "File",
         h = "Harpoon",
+        t = "Tangle",
+        ["<A-e>"] = "Magnify code block",
       },
       b = "Buffer",
       t = "Neorg TODO",
