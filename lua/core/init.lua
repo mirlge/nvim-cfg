@@ -9,6 +9,7 @@ M.plugins = require("core.plugins")
 
 function M.setup(opts)
   local opts = opts or {}
+  M._config = opts
 
   if opts.standalone then
     M.helpers.transparency()

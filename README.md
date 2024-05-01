@@ -10,6 +10,7 @@
       - [Installation of tree-sitter-cli](#installation-of-tree-sitter-cli)
     - [Installation](#installation)
       - [Standalone (to `$XDG_CONFIG_HOME/nvim`, as a normal Neovim config)](#standalone-to-xdgconfighomenvim-as-a-normal-neovim-config)
+  - [Default configuration](#default-configuration)
   - [Keymaps](#keymaps)
 <!--toc:end-->
 
@@ -66,6 +67,15 @@ npm install tree-sitter-cli
    ```
 
 4. Exit Neovim
+
+## Default configuration
+
+```lua
+{
+  standalone = false,
+  notes_dir = "~/Nextcloud/notes", -- The notes dir, only used for the
+}                                  -- `<Leader>fn` keybind
+```
 
 ## Keymaps
 
