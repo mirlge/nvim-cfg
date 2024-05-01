@@ -1,5 +1,18 @@
 # MineItRiGrEight's Neovim configuration
 
+<!--toc:start-->
+- [MineItRiGrEight's Neovim configuration](#mineitrigreights-neovim-configuration)
+  - [Installation](#installation)
+    - [Prerequisites](#prerequisites)
+      - [Installation of the prerequisites except Node.js, tree-sitter-cli and font on macOS (and Linux, probably) with [Homebrew](https://brew.sh/)](#installation-of-the-prerequisites-except-nodejs-tree-sitter-cli-and-font-on-macos-and-linux-probably-with-homebrewhttpsbrewsh)
+      - [Installation of Node.js](#installation-of-nodejs)
+      - [Installation of JetBrains Mono on Linux and macOS](#installation-of-jetbrains-mono-on-linux-and-macos)
+      - [Installation of tree-sitter-cli](#installation-of-tree-sitter-cli)
+    - [Installation](#installation)
+      - [Standalone (to `$XDG_CONFIG_HOME/nvim`, as a normal Neovim config)](#standalone-to-xdgconfighomenvim-as-a-normal-neovim-config)
+  - [Keymaps](#keymaps)
+<!--toc:end-->
+
 ## Installation
 
 ### Prerequisites
