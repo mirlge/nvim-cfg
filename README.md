@@ -11,7 +11,7 @@
 - tree-sitter-cli (only necessary when `auto_install` is set to true in core.plugins.treesitter.opts)
 - font with icons and Powerline glyphs (for example [JetBrains Mono](https://jetbrains.com/mono))
 
-#### Installation of the prerequisites except Node.js, tree-sitter-cli and font on macOS (and Linux, proabably) with [Homebrew](https://brew.sh/)
+#### Installation of the prerequisites except Node.js, tree-sitter-cli and font on macOS (and Linux, probably) with [Homebrew](https://brew.sh/)
 
 ```sh
 brew install neovim ripgrep fd
