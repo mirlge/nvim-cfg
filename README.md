@@ -72,7 +72,7 @@ npm install tree-sitter-cli
 
 ```lua
 {
-  standalone = false,
+  standalone = true,
   notes_dir = "~/Nextcloud/notes", -- The notes dir, only used for the
 }                                  -- `<Leader>fn` keybind
 ```
