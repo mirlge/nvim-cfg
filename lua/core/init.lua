@@ -9,18 +9,19 @@ M.plugins = require("core.plugins")
 
 function M.setup(opts)
   local opts = opts or {}
+  M._config = opts
 
-  if opts.standalone then
+  if not opts.standalone then
     M.helpers.transparency()
 
-    require("core.set")
+    require("core.options")
   end
 
   keymaps.setup()
 
   require("core.lsp")
 
-  if opts.standalone then
+  if not opts.standalone then
     require("core.lazy")
   end
 end

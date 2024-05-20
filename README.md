@@ -1,5 +1,19 @@
 # MineItRiGrEight's Neovim configuration
 
+<!--toc:start-->
+- [MineItRiGrEight's Neovim configuration](#mineitrigreights-neovim-configuration)
+  - [Installation](#installation)
+    - [Prerequisites](#prerequisites)
+      - [Installation of the prerequisites except Node.js, tree-sitter-cli and font on macOS (and Linux, probably) with [Homebrew](https://brew.sh/)](#installation-of-the-prerequisites-except-nodejs-tree-sitter-cli-and-font-on-macos-and-linux-probably-with-homebrewhttpsbrewsh)
+      - [Installation of Node.js](#installation-of-nodejs)
+      - [Installation of JetBrains Mono on Linux and macOS](#installation-of-jetbrains-mono-on-linux-and-macos)
+      - [Installation of tree-sitter-cli](#installation-of-tree-sitter-cli)
+    - [Installation](#installation)
+      - [Standalone (to `$XDG_CONFIG_HOME/nvim`, as a normal Neovim config)](#standalone-to-xdgconfighomenvim-as-a-normal-neovim-config)
+  - [Default configuration](#default-configuration)
+  - [Keymaps](#keymaps)
+<!--toc:end-->
+
 ## Installation
 
 ### Prerequisites
@@ -11,7 +25,7 @@
 - tree-sitter-cli (only necessary when `auto_install` is set to true in core.plugins.treesitter.opts)
 - font with icons and Powerline glyphs (for example [JetBrains Mono](https://jetbrains.com/mono))
 
-#### Installation of the prerequisites except Node.js, tree-sitter-cli and font on macOS (and Linux, proabably) with [Homebrew](https://brew.sh/)
+#### Installation of the prerequisites except Node.js, tree-sitter-cli and font on macOS (and Linux, probably) with [Homebrew](https://brew.sh/)
 
 ```sh
 brew install neovim ripgrep fd
@@ -52,26 +66,19 @@ npm install tree-sitter-cli
    nvim
    ```
 
+4. Exit Neovim
+
+## Default configuration
+
+```lua
+{
+  standalone = true,
+  notes_dir = "~/Nextcloud/notes", -- The notes dir, only used for the
+}                                  -- `<Leader>fn` keybind
+```
+
 ## Keymaps
 
 Use `<Leader>kf` (default `<Leader>` is space) to see all keybinds.
 
-## Some of the commands added
-
-### Install a language server
-
-```vim
-LspInstall <language/server>
-```
-
-### Install Treesitter parser
-
-```vim
-TSInstall <language>
-```
-
-### Check your installed LSP-related stuff
-
-```vim
-Mason
-```
+**Note**: This Neovim config uses [kak.nvim](https://codeberg.org/mirge/kak.nvim), so it has Kakoune-like keybinds.

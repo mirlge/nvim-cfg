@@ -17,5 +17,7 @@ return {
     })
 
     require("mini.splitjoin").setup()
+
+    require("mini.bracketed").setup()
   end,
 }
