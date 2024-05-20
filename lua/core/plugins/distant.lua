@@ -1,10 +1,11 @@
 return {
   'chipsenkbeil/distant.nvim',
   branch = 'v0.3',
+  build = function()
+    vim.cmd.DistantInstall()
+  end,
   config = function(_, opts)
     require("distant"):setup(opts)
-
-    vim.cmd.DistantInstall()
   end,
   opts = {
     -- Applies Chip's personal settings to every machine you connect to

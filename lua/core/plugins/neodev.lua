@@ -1,5 +1,6 @@
 return {
   'folke/neodev.nvim',
+  dependencies = "rcarriga/nvim-dap-ui",
   config = function(_, opts)
     require("neodev").setup(opts)
 
@@ -17,7 +18,5 @@ return {
       }
     })
   end,
-  opts = {
-    library = { plugins = { "nvim-dap-ui" }, types = true },
-  },
+  opts = {},
 }

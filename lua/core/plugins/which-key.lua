@@ -1,36 +1,48 @@
 return {
   "folke/which-key.nvim",
+  event = "VeryLazy",
   init = function()
     vim.o.timeout = true
     vim.o.timeoutlen = 300
   end,
   config = function(_, opts)
+    local wk_presets = require("which-key.plugins.presets")
+    wk_presets.operators.c = nil
+    wk_presets.operators.d = nil
+    wk_presets.operators.y = nil
+
     local wk = require("which-key")
     wk.setup(opts)
 
     wk.register({
       f = {
         name = "File",
-        h = { name = "Harpoon" },
+        h = "Harpoon",
+        t = "Tangle",
+        ["<A-e>"] = "Magnify code block",
       },
-      b = { name = "Buffer" },
-      t = { name = "Neorg TODO" },
-      h = { name = "Help" },
-      g = { name = "Git" },
-      k = { name = "Keymap" },
+      b = "Buffer",
+      t = "Neorg TODO",
+      T = "Trouble",
+      h = "Help",
+      g = "Git",
+      k = "Keymap",
       l = {
         name = "LSP",
-        c = { name = "Code" }
+        c = "Code",
       },
-      d = { name = "DAP" },
+      d = {
+        name = "DAP",
+        s = "Step",
+      },
       o = {
         name = "(Ne)org",
-        i = { name = "org insert" },
-        x = { name = "org clock" }
+        i = "org insert",
+        x = "org clock",
       },
-      s = { name = "Session" },
-      q = { name = "DB" },
-      S = { name = "Flash" },
+      s = "Session",
+      q = "DB",
+      S = "Flash",
     }, { prefix = "<Leader>" })
 
     wk.register({

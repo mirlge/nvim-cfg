@@ -7,6 +7,40 @@ return {
     -- refer to the configuration section below
   },
   keys = {
-    { "<Leader>lt", function() require("trouble").toggle() end, desc = "Toggle Trouble" },
+    {
+      "<Leader>Tt",
+      function()
+        require("trouble").toggle()
+      end,
+      desc = "Toggle Trouble",
+    },
+    {
+      "<Leader>Tq",
+      function()
+        require("trouble").toggle("quickfix")
+      end,
+      desc = "Toggle Trouble in quickfix mode",
+    },
+    {
+      "gR",
+      function()
+        require("trouble").toggle("lsp_references")
+      end,
+      desc = "LSP references",
+    },
+    {
+      "<Leader>Tn",
+      function()
+        require("trouble").next({ skip_groups = true, jump = true })
+      end,
+      desc = "Next",
+    },
+    {
+      "<Leader>Tp",
+      function()
+        require("trouble").previous({ skip_groups = true, jump = true })
+      end,
+      desc = "Next",
+    },
   },
 }

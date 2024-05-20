@@ -1,5 +1,6 @@
 return {
   "roobert/activate.nvim",
+  dependencies = { 'nvim-telescope/telescope.nvim' },
   keys = {
     {
       "<leader>P",

@@ -1,8 +1,10 @@
 return {
   'nvim-orgmode/orgmode',
+  dependencies = { 'nvim-treesitter/nvim-treesitter' },
+  event = "VeryLazy",
+  ft = { "org" },
   config = function(_, opts)
     require("orgmode").setup(opts)
-    require("orgmode").setup_ts_grammar()
   end,
   opts = {
     org_agenda_files = { "~/Nextcloud/org/*" },

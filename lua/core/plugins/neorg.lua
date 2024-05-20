@@ -1,15 +1,15 @@
 return {
   "nvim-neorg/neorg",
-  build = ":Neorg sync-parsers",
+  dependencies = { "luarocks.nvim" },
   opts = {
     load = {
-      ["core.defaults"] = {},   -- Loads default behaviour
-      ["core.concealer"] = {    -- Adds pretty icons to your documents
+      ["core.defaults"] = {}, -- Loads default behaviour
+      ["core.concealer"] = {  -- Adds pretty icons to your documents
         config = {
           folds = false,
         },
       },
-      ["core.dirman"] = {   -- Manages Neorg workspaces
+      ["core.dirman"] = { -- Manages Neorg workspaces
         config = {
           workspaces = {
             notes = "~/Nextcloud/norg/notes",
@@ -44,5 +44,4 @@ return {
       ["core.ui.calendar"] = {},
     },
   },
-  dependencies = { { "nvim-lua/plenary.nvim" } },
 }

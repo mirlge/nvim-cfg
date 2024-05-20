@@ -1,10 +1,11 @@
 return {
   "mfussenegger/nvim-jdtls",
-  config = function()
-    local config = {
-      cmd = { vim.fn.stdpath("data") .. "/mason/bin/jdtls" },
-      root_dir = vim.fs.dirname(vim.fs.find({ "gradlew", ".git", "mvnw" }, { upward = true })[1]),
-    }
-    require("jdtls").start_or_attach(config)
+  ft = { "java" },
+  opts = {
+    cmd = { vim.fn.stdpath("data") .. "/mason/bin/jdtls" },
+    root_dir = vim.fs.dirname(vim.fs.find({ "gradlew", ".git", "mvnw" }, { upward = true })[1]),
+  },
+  config = function(_, opts)
+    require("jdtls").start_or_attach(opts)
   end,
 }
