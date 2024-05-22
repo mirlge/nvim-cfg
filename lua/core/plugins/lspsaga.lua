@@ -5,9 +5,7 @@ return {
     "nvim-treesitter/nvim-treesitter", -- optional
     "nvim-tree/nvim-web-devicons",     -- optional
   },
-  opts = {
-    symbol_in_winbar = { enable = false },
-  },
+  opts = {},
   keys = {
     { "<A-k>",       function() vim.cmd.Lspsaga("hover_doc") end,   desc = "Hover" },
     { "<Leader>lca", function() vim.cmd.Lspsaga("code_action") end, desc = "Action" },
