@@ -6,11 +6,12 @@ return {
     -- or leave it empty to use the default settings
     -- refer to the configuration section below
   },
+  cmd = "Trouble",
   keys = {
     {
       "<Leader>Tt",
       function()
-        require("trouble").toggle()
+        require("trouble").toggle("diagnostics")
       end,
       desc = "Toggle Trouble",
     },
@@ -38,7 +39,7 @@ return {
     {
       "<Leader>Tp",
       function()
-        require("trouble").previous({ skip_groups = true, jump = true })
+        require("trouble").prev({ skip_groups = true, jump = true })
       end,
       desc = "Next",
     },
