@@ -12,5 +12,7 @@ return {
       end,
       desc = "Stage hunk",
     },
+    { "<Leader>gn", function() vim.cmd.Gitsigns("next_hunk") end,           desc = "Next hunk" },
+    { "<Leader>gp", function() vim.cmd.Gitsigns("prev_hunk") end,           desc = "Previous hunk" },
   },
 }
