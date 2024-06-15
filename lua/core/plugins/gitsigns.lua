@@ -14,5 +14,6 @@ return {
     },
     { "<Leader>gn", function() vim.cmd.Gitsigns("next_hunk") end,           desc = "Next hunk" },
     { "<Leader>gp", function() vim.cmd.Gitsigns("prev_hunk") end,           desc = "Previous hunk" },
+    { "<Leader>gP", function() vim.cmd.Gitsigns("preview_hunk_inline") end, desc = "Preview hunk" },
   },
 }
