@@ -5,56 +5,48 @@ return {
     vim.o.timeout = true
     vim.o.timeoutlen = 300
   end,
-  config = function(_, opts)
-    local wk_presets = require("which-key.plugins.presets")
-    wk_presets.operators.c = nil
-    wk_presets.operators.d = nil
-    wk_presets.operators.y = nil
-
-    local wk = require("which-key")
-    wk.setup(opts)
-
-    wk.register({
-      f = {
-        name = "File",
-        h = "Harpoon",
-        t = "Tangle",
-        ["<A-e>"] = "Magnify code block",
-      },
-      b = "Buffer",
-      t = "Neorg TODO",
-      T = "Trouble",
-      h = "Help",
-      g = "Git",
-      k = "Keymap",
-      l = {
-        name = "LSP",
-        c = "Code",
-      },
-      d = {
-        name = "DAP",
-        s = "Step",
-      },
-      o = {
-        name = "(Ne)org",
-        i = "org insert",
-        x = "org clock",
-      },
-      s = "Session",
-      q = "DB",
-      S = "Flash",
-    }, { prefix = "<Leader>" })
-
-    wk.register({
-      r = {
-        name = "Refactor",
-        r = "Smart rename",
-      },
-    }, { prefix = "g" })
-  end,
   opts = {
-    -- your configuration comes here
-    -- or leave it empty to use the default settings
-    -- refer to the configuration section below
+    preset = "helix",
+    spec = {
+      {
+        {
+          "<Leader>f",
+          group = "File",
+          { "<Leader>fh",     group = "Harpoon" },
+          { "<Leader>ft",     group = "Tangle" },
+          { "<Leader>f<A-e>", desc = "Magnify code block" },
+        },
+        { "<Leader>b", group = "Buffer" },
+        { "<Leader>t", group = "Neorg TODO" },
+        { "<Leader>T", group = "Trouble" },
+        { "<Leader>h", group = "Help" },
+        { "<Leader>g", group = "Git" },
+        { "<Leader>k", group = "Keymap" },
+        {
+          "<Leader>l",
+          group = "LSP",
+          { "<Leader>lc", group = "Code" },
+        },
+        {
+          "<Leader>d",
+          group = "DAP",
+          { "<Leader>ds", group = "Step" },
+        },
+        {
+          "<Leader>o",
+          group = "(Ne)org",
+          { "<Leader>oi", group = "org insert" },
+          { "<Leader>ox", group = "org clock" },
+        },
+        { "<Leader>s", group = "Session" },
+        { "<Leader>q", group = "DB" },
+        { "<Leader>S", group = "Flash" },
+      },
+      {
+        "gr",
+        group = "Refactor",
+        { "grr", desc = "Smart rename" },
+      },
+    },
   },
 }
