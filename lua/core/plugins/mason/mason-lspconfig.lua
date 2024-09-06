@@ -30,7 +30,7 @@ return {
     ensure_installed = {
       "basedpyright",
       "rust_analyzer",
-      --"tsserver",
+      "tsserver",
       "lua_ls",
       "gopls",
     },
