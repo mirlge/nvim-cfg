@@ -16,9 +16,6 @@ return {
     }
     main.setup_handlers({
       function(server_name)
-        if server_name == "tsserver" then
-          server_name = "ts_ls"
-        end
         require("lspconfig")[server_name].setup({
           capabilities = capabilities,
         })
@@ -30,7 +27,7 @@ return {
     ensure_installed = {
       "basedpyright",
       "rust_analyzer",
-      "tsserver",
+      "ts_ls",
       "lua_ls",
       "gopls",
     },
