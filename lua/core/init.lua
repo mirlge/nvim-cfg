@@ -12,8 +12,6 @@ function M.setup(opts)
   M._config = opts
 
   if not opts.standalone then
-    M.helpers.transparency()
-
     require("core.options")
   end
 

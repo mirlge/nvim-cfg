@@ -1,5 +1,11 @@
 return {
   'rose-pine/neovim',
   name = 'rose-pine',
-  config = function() vim.cmd.colorscheme("rose-pine") end,
+  opts = {
+    styles = { transparency = true },
+  },
+  config = function(_, opts)
+    require("rose-pine").setup(opts)
+    vim.cmd.colorscheme("rose-pine")
+  end,
 }
