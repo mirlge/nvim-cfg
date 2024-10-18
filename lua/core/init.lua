@@ -1,7 +1,5 @@
 local M = {}
 
-M.helpers = require("core.helpers")
-
 local keymaps = require("core.keymaps")
 M.keymaps = keymaps.keymaps
 
