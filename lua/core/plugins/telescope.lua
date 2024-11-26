@@ -8,6 +8,11 @@ return {
   },
   opts = {
     defaults = {
+      layout_config = {
+        horizontal = {
+          prompt_position = "top",
+        },
+      },
       mappings = {
         i = {
           ["<C-t>"] = function()
