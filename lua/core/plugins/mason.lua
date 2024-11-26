@@ -1,7 +1,9 @@
 return {
   {
     "williamboman/mason.nvim",
-    opts = {},
+    opts = {
+      ui = { border = "rounded" },
+    },
   },
   { import = "core.plugins.mason" },
 }
