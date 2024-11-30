@@ -37,10 +37,12 @@ local M = {
     {
       "<Leader>fn",
       function()
-        vim.cmd.drop((require("core")._config.notes_dir or "~/Nextcloud/notes")
-          .. "/index.md")
+        local notes_dir = require("core")._config.notes_dir or "~/Nextcloud/notes"
+        vim.cmd.tabnew()
+        vim.cmd.tcd(notes_dir)
+        require("oil").open(notes_dir)
       end,
-      opts = { desc = "Open notes index" },
+      opts = { desc = "Open notes" },
     },
   },
 }
