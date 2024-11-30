@@ -8,7 +8,7 @@ return {
     },
     links = {
       transform_explicit = function(text)
-        text = text:gsub(" ", "-")
+        text = text:gsub(" ", "_")
         text = text:lower()
         return (text)
       end,
