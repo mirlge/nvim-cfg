@@ -51,6 +51,7 @@ return {
           { name = "conventionalcommits" },
           { name = "obsidian.nvim" },
           { name = "nvim_lsp_signature_help" },
+          { name = 'mkdnflow' },
         },
         snippet = {
           expand = function(args)
