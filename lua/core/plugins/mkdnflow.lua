@@ -4,6 +4,7 @@ return {
     wrap = true,
     modules = {
       cmp = true,
+      yaml = true,
     },
   },
 }
