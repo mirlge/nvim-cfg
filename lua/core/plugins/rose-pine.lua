@@ -16,6 +16,8 @@ return {
 
       TelescopePromptNormal = { fg = "text", bg = "surface" },
       TelescopePromptBorder = { fg = "surface", bg = "surface" },
+
+      VisualNonText = { fg = "overlay", bg = "highlight_med" },
     },
   },
   config = function(_, opts)
