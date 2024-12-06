@@ -10,4 +10,7 @@ return {
     notifier = { enabled = true },
     quickfile = { enabled = true },
   },
+  keys = {
+    { "<Leader>bd", function() Snacks.bufdelete() end, desc = "Delete current buffer" },
+  },
 }
