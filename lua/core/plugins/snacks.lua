@@ -12,5 +12,6 @@ return {
   },
   keys = {
     { "<Leader>bd", function() Snacks.bufdelete() end, desc = "Delete current buffer" },
+    { "<Leader>.",  function() Snacks.scratch() end,   desc = "Toggle scratch buffer" },
   },
 }
