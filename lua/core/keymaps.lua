@@ -37,7 +37,7 @@ local M = {
     {
       "<Leader>fn",
       function()
-        local notes_dir = require("core")._config.notes_dir or "~/Nextcloud/notes"
+        local notes_dir = require("core")._config.notes_dir
         if vim.o.filetype ~= "ministarter" then
           vim.cmd.tabnew()
         end

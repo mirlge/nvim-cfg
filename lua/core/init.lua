@@ -7,7 +7,7 @@ M.plugins = require("core.plugins")
 
 function M.setup(opts)
   local opts = opts or {}
-  M._config = opts
+  M._config = vim.tbl_deep_extend("force", opts, require("core.defaults"))
 
   if not opts.standalone then
     require("core.options")
