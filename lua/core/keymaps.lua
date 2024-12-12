@@ -38,10 +38,12 @@ local M = {
       "<Leader>fn",
       function()
         local notes_dir = require("core")._config.notes_dir
-        if vim.o.filetype ~= "ministarter" then
-          vim.cmd.tabnew()
+        if vim.fn.getcwd() ~= notes_dir then
+          if vim.o.filetype ~= "ministarter" then
+            vim.cmd.tabnew()
+          end
+          vim.cmd.tcd(notes_dir)
         end
-        vim.cmd.tcd(notes_dir)
         require("oil").open(notes_dir)
       end,
       opts = { desc = "Open notes" },
