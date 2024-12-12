@@ -1,4 +1,4 @@
 return {
-  notes_dir = "~/Nextcloud/notes",
+  notes_dir = vim.fn.expand("~/Nextcloud/notes"),
   standalone = false,
 }
