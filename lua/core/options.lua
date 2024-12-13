@@ -28,7 +28,7 @@ vim.opt.smartcase = true
 
 vim.opt.scrolloff = 8
 
-vim.opt.guifont = "JetBrainsMono Nerd Font Mono:h13"
+vim.opt.guifont = "JetBrainsMono Nerd Font Mono:h12"
 
 vim.opt.signcolumn = "yes"
 
