@@ -23,7 +23,7 @@ return {
     }
 
     if vim.g.neovide then
-      opts.styles.transparency = nil
+      opts.highlight_groups.Normal = { bg = "base" }
     end
 
     return opts
