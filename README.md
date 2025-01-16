@@ -11,24 +11,23 @@
 - tree-sitter-cli (only necessary when `auto_install` is set to true in core.plugins.treesitter.opts)
 - font with icons and Powerline glyphs (for example [JetBrains Mono](https://jetbrains.com/mono))
 
-#### Installation of the prerequisites except Node.js, tree-sitter-cli and font on macOS (and Linux, probably) with [Homebrew](https://brew.sh/)
+#### Installation of the prerequisites except Node.js on Arch Linux
 
 ```sh
-brew install neovim ripgrep fd
+sudo pacman -S --needed neovim ripgrep fd ttf-jetbrains-mono-nerd tree-sitter-cli
 ```
 
-#### Installation of Node.js
+#### Installation of the prerequisites except Node.js and tree-sitter-cli on macOS
 
-Via [Node Version Manager](https://nvm.sh/) (recommended)
+```sh
+brew install neovim ripgrep fd font-jetbrains-mono-nerd-font
+```
 
-#### Installation of JetBrains Mono on Linux and macOS
+#### Installation of [Node.js](https://nodejs.org/en)
 
-1. Go to JetBrains Mono's website and download the font
-2. Extract the archive to ~/.local/share/fonts/
-3. Run `fc-cache -f -v` to refresh your font cache
-4. Set the font of your terminal emulator to JetBrains Mono
+Via [Node Version Manager](https://nvm.sh/) preferably
 
-#### Installation of tree-sitter-cli
+#### Installation of tree-sitter-cli using npm
 
 ```sh
 npm install tree-sitter-cli
