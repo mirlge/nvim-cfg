@@ -14,6 +14,7 @@ return {
 
   opts = {
     preview = {
+      icon_provider = "devicons",
       modes = { "n", "no", "i", "c", "x" },
       hybrid_modes = { "i", "x" },
     },
