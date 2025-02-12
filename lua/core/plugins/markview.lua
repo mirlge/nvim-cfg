@@ -18,5 +18,8 @@ return {
       modes = { "n", "no", "i", "c", "x" },
       hybrid_modes = { "i", "x" },
     },
+    latex = {
+      enable = false,
+    },
   },
 }
