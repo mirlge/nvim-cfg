@@ -6,7 +6,7 @@ M.keymaps = keymaps.keymaps
 M.plugins = require("core.plugins")
 
 ---setup function
----@param opts { notes_dir: string, standalone: boolean }
+---@param opts? { notes_dir?: string, standalone?: boolean }
 function M.setup(opts)
   local opts = opts or {}
   M._config = vim.tbl_deep_extend("force", require("core.defaults"), opts)
