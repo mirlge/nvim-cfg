@@ -10,7 +10,7 @@ return {
   end,
   keys = {
     {
-      "<Leader>dc",
+      "<Leader>dC",
       function()
         require("telescope").extensions.dap.commands()
       end,
