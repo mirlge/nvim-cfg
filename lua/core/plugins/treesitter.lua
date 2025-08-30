@@ -4,6 +4,7 @@ return {
     dependencies = {
       "LiadOz/nvim-dap-repl-highlights",
     },
+    branch = "master",
     build = function()
       require("nvim-treesitter.install").update({ with_sync = true })
     end,
