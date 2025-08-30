@@ -7,5 +7,6 @@ return {
       tangle_workspace = "<leader>ftw",
       tangle_remove = "<leader>ftd",
     },
-  }
+  },
+  enabled = false,
 }
