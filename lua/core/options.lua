@@ -38,3 +38,5 @@ vim.opt.listchars = {
   trail = "·",
   nbsp = "␣",
 }
+
+vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
