@@ -3,6 +3,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     dependencies = {
       "LiadOz/nvim-dap-repl-highlights",
+      "OXY2DEV/markview.nvim",
     },
     branch = "master",
     build = function()
