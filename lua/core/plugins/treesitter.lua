@@ -1,7 +1,10 @@
 return {
   {
     'nvim-treesitter/nvim-treesitter',
-    dependencies = { "OXY2DEV/markview.nvim" },
+    dependencies = {
+      "OXY2DEV/markview.nvim",
+      "LiadOz/nvim-dap-repl-highlights",
+    },
     lazy = false,
     branch = 'main',
     build = ':TSUpdate',
