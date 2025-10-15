@@ -15,5 +15,6 @@ return {
       end,
     },
     mappings = { MkdnToggleToDo = false },
+    foldtext = { object_count_icon_set = "nerdfont" },
   },
 }
