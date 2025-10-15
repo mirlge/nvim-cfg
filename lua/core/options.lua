@@ -39,4 +39,8 @@ vim.opt.listchars = {
   nbsp = "␣",
 }
 
-vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+vim.opt.foldenable = true
+vim.opt.foldlevelstart = 0
+vim.opt.foldcolumn = "1"
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"

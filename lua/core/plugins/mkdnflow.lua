@@ -1,5 +1,6 @@
 return {
   'jakewvincent/mkdnflow.nvim',
+  dependencies = { "OXY2DEV/foldtext.nvim" },
   opts = {
     wrap = true,
     modules = {
@@ -12,6 +13,8 @@ return {
         text = text:lower()
         return (text)
       end,
-    }
+    },
+    mappings = { MkdnToggleToDo = false },
+    foldtext = { object_count_icon_set = "nerdfont" },
   },
 }
