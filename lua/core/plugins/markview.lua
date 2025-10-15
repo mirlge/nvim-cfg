@@ -30,6 +30,9 @@ return {
       latex = {
         enable = false,
       },
+      markdown = {
+        headings = { enable = false },
+      },
     },
     checkboxes = {
       default = " ",
