@@ -1,5 +1,6 @@
 return {
   'jakewvincent/mkdnflow.nvim',
+  dependencies = { "OXY2DEV/foldtext.nvim" },
   opts = {
     wrap = true,
     modules = {
