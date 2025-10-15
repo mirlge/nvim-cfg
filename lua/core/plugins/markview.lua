@@ -7,15 +7,25 @@ return {
     "nvim-tree/nvim-web-devicons",
     "rose-pine/neovim",
   },
+  config = function(_, opts)
+    require("markview").setup(opts.main)
+    require("markview.extras.checkboxes").setup(opts.checkboxes)
+    require("markview.extras.editor").setup(opts.editor)
+  end,
 
   opts = {
-    preview = {
-      icon_provider = "devicons",
-      modes = { "n", "no", "i", "c", "x" },
-      hybrid_modes = { "i", "x" },
+    main = {
+      preview = {
+        icon_provider = "devicons",
+        modes = { "n", "no", "i", "c", "x" },
+        hybrid_modes = { "i", "x" },
+      },
+      latex = {
+        enable = false,
+      },
     },
-    latex = {
-      enable = false,
+    checkboxes = {
+      default = " ",
     },
   },
 }
