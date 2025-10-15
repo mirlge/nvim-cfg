@@ -21,6 +21,7 @@ function M.setup(opts)
 
   if not opts.standalone then
     require("core.lazy")
+    require("core.post-options")
   end
 end
 
