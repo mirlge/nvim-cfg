@@ -11,6 +11,13 @@ return {
     require("markview").setup(opts.main)
     require("markview.extras.checkboxes").setup(opts.checkboxes)
     require("markview.extras.editor").setup(opts.editor)
+
+    vim.api.nvim_create_autocmd("User", {
+      pattern = "MarkviewAttach",
+      callback = function(_)
+        vim.keymap.set({ "n", "x" }, "<C-Space>", "<cmd>Checkbox interactive<CR>", { desc = "Toggle checkbox" })
+      end,
+    })
   end,
 
   opts = {

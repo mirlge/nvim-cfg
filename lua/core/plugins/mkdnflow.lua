@@ -12,6 +12,7 @@ return {
         text = text:lower()
         return (text)
       end,
-    }
+    },
+    mappings = { MkdnToggleToDo = false },
   },
 }
