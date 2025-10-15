@@ -40,8 +40,7 @@ vim.opt.listchars = {
 }
 
 vim.opt.foldenable = true
-vim.opt.foldlevel = 99
-vim.opt.foldlevelstart = 99
+vim.opt.foldlevelstart = 0
 vim.opt.foldcolumn = "1"
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
