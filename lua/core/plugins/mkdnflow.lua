@@ -4,7 +4,7 @@ return {
   opts = {
     wrap = true,
     modules = {
-      cmp = true,
+      completion = true,
       yaml = true,
     },
     links = {
