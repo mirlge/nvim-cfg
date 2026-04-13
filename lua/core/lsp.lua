@@ -1,13 +1,5 @@
 local augroup = vim.api.nvim_create_augroup('UserLspConfig', {})
 
-vim.api.nvim_create_autocmd('BufWritePre', {
-  group = augroup,
-  desc = 'Format buffer',
-  callback = function()
-    vim.lsp.buf.format()
-  end,
-})
-
 vim.api.nvim_create_autocmd('LspAttach', {
   group = augroup,
   desc = 'Lsp setup',
