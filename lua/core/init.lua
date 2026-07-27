@@ -24,7 +24,7 @@ function M.setup(opts)
     require("core.post-options")
   end
 
-  vim.cmd.colorscheme("rose-pine")
+  vim.cmd.colorscheme("neopywal")
 end
 
 return M

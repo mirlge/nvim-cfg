@@ -1,9 +1,14 @@
 return {
-  'nvim-lualine/lualine.nvim',
-  dependencies = { 'nvim-tree/nvim-web-devicons' },
+  "nvim-lualine/lualine.nvim",
+  dependencies = { "nvim-tree/nvim-web-devicons", "neopywal" },
+  config = function(_, opts)
+    require("neopywal.theme.plugins.lualine").setup()
+    require("lualine").setup(opts)
+  end,
   opts = {
     options = {
       globalstatus = true,
+      theme = "neopywal"
     },
     sections = {
       lualine_a = { {
