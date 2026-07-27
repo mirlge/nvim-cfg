@@ -5,7 +5,7 @@ return {
 
   dependencies = {
     "nvim-tree/nvim-web-devicons",
-    "rose-pine/neovim",
+    "neopywal",
   },
   config = function(_, opts)
     require("markview").setup(opts.main)
