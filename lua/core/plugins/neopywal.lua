@@ -21,5 +21,6 @@ return {
       telescope = { style = "nvchad" },
       trouble = true,
     },
+    transparent_background = true,
   },
 }
