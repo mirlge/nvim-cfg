@@ -23,6 +23,8 @@ function M.setup(opts)
     require("core.lazy")
     require("core.post-options")
   end
+
+  vim.cmd.colorscheme("rose-pine")
 end
 
 return M
