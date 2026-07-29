@@ -33,8 +33,6 @@ npm install tree-sitter-cli
 
 ### Installation
 
-#### Standalone (to `$XDG_CONFIG_HOME/nvim`, as a normal Neovim config)
-
 1. Clone the repository
    ```sh
    git clone https://codeberg.org/mirge/nvim-cfg.git ~/.config/nvim
@@ -55,8 +53,7 @@ npm install tree-sitter-cli
 
 ```lua
 {
-  standalone = true,
-  notes_dir = "~/Nextcloud/notes", -- The notes dir, only used for the
+  notes_dir = "~/Nextcloud/notes", -- The notes dir; only used for the
 }                                  -- `<Leader>fn` keybind
 ```
 
