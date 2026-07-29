@@ -21,12 +21,6 @@ cd iris-colors
 makepkg -si
 ```
 
-#### Installation of the prerequisites except Node.js and tree-sitter-cli on macOS
-
-```sh
-brew install neovim ripgrep fd font-jetbrains-mono-nerd-font
-```
-
 #### Installation of [Node.js](https://nodejs.org/en)
 
 Via [Node Version Manager](https://nvm.sh/) preferably
