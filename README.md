@@ -8,13 +8,17 @@
 - ripgrep
 - fd
 - [Node.js](https://nodejs.org/)
-- tree-sitter-cli (only necessary when `auto_install` is set to true in core.plugins.treesitter.opts)
-- font with icons and Powerline glyphs (for example [JetBrains Mono](https://jetbrains.com/mono))
+- tree-sitter-cli (only necessary when `auto_install` is set to true in `core.plugins.treesitter.opts`)
+- font with icons and Powerline glyphs (e.g. [JetBrains Mono](https://jetbrains.com/mono))
+- [iris](https://github.com/Harman1307/iris) or pywal with a symlink at `~/.cache/iris/colors.vim` pointing to `~/.cache/wal/colors-wal.vim`
 
 #### Installation of the prerequisites except Node.js on Arch Linux
 
 ```sh
 sudo pacman -S --needed neovim ripgrep fd ttf-jetbrains-mono-nerd tree-sitter-cli
+git clone https://aur.archlinux.org/iris-colors.git
+cd iris-colors
+makepkg -si
 ```
 
 #### Installation of the prerequisites except Node.js and tree-sitter-cli on macOS
