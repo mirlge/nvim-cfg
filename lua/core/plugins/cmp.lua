@@ -3,9 +3,6 @@ return {
     "hrsh7th/nvim-cmp",
     dependencies = {
       "neovim/nvim-lspconfig",
-      "nvim-orgmode/orgmode",
-      "epwalsh/obsidian.nvim",
-      "nvim-neorg/neorg",
 
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
@@ -47,7 +44,6 @@ return {
           { name = "calc" },
           { name = "git" },
           { name = "conventionalcommits" },
-          { name = "obsidian.nvim" },
           { name = "nvim_lsp_signature_help" },
           { name = 'mkdnflow' },
         },
